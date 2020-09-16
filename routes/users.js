@@ -13,9 +13,13 @@ router.get('/', (req, res) => {
     name: 'Jane Doe',
   },
   {
-    "id": 25,
-    "name": "Daniel Alemayo"
-  }
+    id: 25,
+    name: "Daniel Alemayo",
+  },
+  {
+    id: 4,
+    name:"Sapir Yayech",
+  },
   ];
   res.send(users);
 });
