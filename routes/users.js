@@ -9,12 +9,12 @@ router.get('/', (req, res) => {
     name: 'John Doe',
   },
   {
-    id: 2,
-    name: 'Jane Doe',
+    id: 26,
+    name: 'Shlomi Salem',
   },
   {
     id: 25,
-    name: 'Daniel Alemayo6666',
+    name: 'Daniel Alemayo',
   },
   {
     id: 4,
