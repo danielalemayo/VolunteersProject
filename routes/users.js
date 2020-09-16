@@ -15,7 +15,7 @@ router.get('/', function (req, res, next) {
   {
     "id": 25,
     "name": "Daniel Alemayo"
-  }
+  },
   {
     "id": 20,
     "name": "Sapir Yayech"
