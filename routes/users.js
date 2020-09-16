@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
   },
   {
     id: 25,
-    name: 'Daniel Alemayo',
+    name: 'Daniel Alemayo the master :)',
   },
   {
     id: 4,
