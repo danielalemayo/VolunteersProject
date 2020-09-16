@@ -9,6 +9,10 @@ router.get('/', (req, res) => {
     name: 'John Doe',
   },
   {
+    id: 34,
+    name: 'YG',
+  },
+  {
     id: 26,
     name: 'Shlomi Salem',
   },
