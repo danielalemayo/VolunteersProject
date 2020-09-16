@@ -14,15 +14,15 @@ router.get('/', (req, res) => {
   },
   {
     id: 25,
-    name: "Daniel Alemayo6666",
+    name: 'Daniel Alemayo6666',
   },
   {
     id: 4,
-    name:"Sapir Yayech",
+    name: 'Sapir Yayech',
   },
   {
     id: 2,
-    name:"Daniel Mangisto",
+    name: 'Daniel Mangisto',
   },
   ];
   res.send(users);
