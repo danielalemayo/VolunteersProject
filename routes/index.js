@@ -1,11 +1,10 @@
-import { Router } from 'express';
+const express = require('express');
 
-const router = Router();
+const router = express.Router();
 
 /* GET home page. */
-// eslint-disable-next-line no-unused-vars
-router.get('/', (_req, res, __next) => {
+router.get('/', (req, res) => {
   res.render('index', { title: 'Express' });
 });
 
-export default router;
+module.exports = router;
