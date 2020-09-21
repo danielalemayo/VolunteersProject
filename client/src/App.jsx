@@ -24,19 +24,6 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit&nbsp;
-          <code>src/App.jsx</code>
-          &nbsp;and save to reload me!
-          <br />
-          Running in
-          &nbsp;
-          {process.env.NODE_ENV}
-          &nbsp;
-          mode
-        </p>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -48,8 +35,7 @@ function App() {
             users.map((user) => (<div key={user.id}>{user.name}</div>))
           }
         </a>
-      </header>
-    </div>
+      </div>
   );
 }
 export default App;
