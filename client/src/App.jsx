@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import routUser from './../../routes/api/users'
+const routUser = require('./../../routes/api/users')
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -23,32 +25,40 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit&nbsp;
-          <code>src/App.jsx</code>
+    <div>
+      <form action={routUser} method="post">
+        <input type="text" name="name" placeholder="name"></input>
+        <input type="text" name="email" placeholder="email"></input>
+        <input type="text" name="password" placeholder="password"></input>
+        <button type="submit">Submit</button>
+      </form>
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit&nbsp;
+           <code>src/App.jsx</code>
           &nbsp;and save to reload me!
-          <br />
-          Running in
+           <br />
+           Running in
+           &nbsp;
+           {process.env.NODE_ENV}
           &nbsp;
-          {process.env.NODE_ENV}
-          &nbsp;
-          mode
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Users List from Server:
-          {
-            users.map((user) => (<div key={user.id}>{user.name}</div>))
-          }
-        </a>
-      </header>
+           mode
+         </p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Users List from Server:
+           {
+              users.map((user) => (<div key={user.id}>{user.name}</div>))
+            }
+          </a>
+        </header>
+      </div>
     </div>
   );
 }

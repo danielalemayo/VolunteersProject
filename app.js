@@ -5,9 +5,11 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors');
 
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-
+const indexRouter = require('./routes/api/index');
+const usersRouter = require('./routes/api/users');
+const connectDB = require('./config/db');
+// Connect Database
+connectDB();
 const app = express();
 
 // view engine setup
@@ -25,8 +27,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Added to serve client static files
 app.use(express.static(path.resolve(__dirname, 'client/build')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+
+// app.use('/', indexRouter);
+// app.use('/users', usersRouter);
+app.use('/api/users', usersRouter);
+app.use('/api/index', indexRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
