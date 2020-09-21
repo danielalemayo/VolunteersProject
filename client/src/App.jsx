@@ -25,6 +25,7 @@ function App() {
   }, []);
 
   return (
+<<<<<<< HEAD
     <div>
       <form action={routUser} method="post">
         <input type="text" name="name" placeholder="name"></input>
@@ -60,6 +61,21 @@ function App() {
         </header>
       </div>
     </div>
+=======
+    <div className="App">
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Users List from Server:
+          {
+            users.map((user) => (<div key={user.id}>{user.name}</div>))
+          }
+        </a>
+      </div>
+>>>>>>> f577276f15b7b99fba88d8c3ef61af27934768a6
   );
 }
 export default App;
