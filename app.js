@@ -27,9 +27,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Added to serve client static files
 app.use(express.static(path.resolve(__dirname, 'client/build')));
 
-
-// app.use('/', indexRouter);
-// app.use('/users', usersRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/index', indexRouter);
 
