@@ -1,0 +1,8 @@
+.Container {
+  border: blue solid 1px;
+  width: 250px;
+}
+
+ul {
+  list-style-type: none;
+}
