@@ -1,5 +1,6 @@
 const express = require('express');
 const userController = require('../../controller/users-controller');
+
 const router = express.Router();
 
 /* GET users listing. */
@@ -14,5 +15,5 @@ router.route('/:id')
   .patch(userController.updateUser)
   .delete(userController.deleteUser);
 // router.route('/').get(userController.getAllUsers);
-router.route('/register').get(userController.register);
+// router.route('/register').get(userController.register);
 module.exports = router;

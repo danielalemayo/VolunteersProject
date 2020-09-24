@@ -31,7 +31,7 @@ function Signup() {
         <h1>SignUp</h1>
         <div>
           <div>
-            <input type="text" placeholder="שם פרטי" />
+            <input onChange="" name="firstName" type="text" placeholder="שם פרטי" />
             <label >:שם פרטי</label>
           </div>
           <div>
