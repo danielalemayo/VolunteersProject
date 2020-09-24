@@ -1,5 +1,3 @@
-const {json} = require('express');
-const bcrypt = require('bcrypt');
 const User = require('../models/users-model');
 
 exports.getAllUsers = async (req, res) => {
