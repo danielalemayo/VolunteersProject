@@ -4,6 +4,7 @@ export default function GetUsers() {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
+
         function getUsers() {
             fetch('http://localhost:3001/api/users/5f6b1e8a699f4538a0393a2d')
                 .then(response => response.json())
@@ -12,7 +13,9 @@ export default function GetUsers() {
                     setUsers(users.data);
                 })
         }
+
         getUsers()
+        
     }, []);
 
     const renderUsers = users.map(user => (
@@ -30,7 +33,4 @@ export default function GetUsers() {
         </ul>
 
     )
-
-
 }
-

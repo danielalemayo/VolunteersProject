@@ -1,4 +1,5 @@
-import Logo from "./Logo";
-import Links from "./Links"
-import NavBar from "./Navbar"
-export{Logo,Links,NavBar};
+import Logo from './Logo';
+import Links from './Links';
+import NavBar from './Navbar';
+
+export { Logo, Links, NavBar };
