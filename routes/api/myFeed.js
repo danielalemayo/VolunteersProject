@@ -1,13 +1,16 @@
 const express = require('express');
-const Event = require('../../models/VolunteeringEvents-model');
 const eventCtrl = require('../../controlers/ctrlEvents');
+
 const router = express.Router();
 
 /* GET users listing. */
-router.post('/', (req, res) => {
-// comment: 
+router.route('/')
+  .get(eventCtrl.getAllEvents)
+  .post(eventCtrl.createEvents);
 
-  // eventCtrl.getEvent
-} );
+router.route('/:id')
+  .patch(eventCtrl.updateEvents)
+  .get(eventCtrl.getEvent)
+  .delete(eventCtrl.deleteEvent);
 
 module.exports = router;

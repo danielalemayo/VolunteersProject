@@ -4,7 +4,6 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors');
-const db = require('./db/index');
 
 const indexRouter = require('./routes/api/index');
 const usersRouter = require('./routes/api/users');
@@ -29,16 +28,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Added to serve client static files
 app.use(express.static(path.resolve(__dirname, 'client/build')));
 
-
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/index', indexRouter);
 app.use('/api/myFeed', eventsRouter);
-
-app.get('/api/myFeed', function (req, res) {
-  res.send('GET request to the homepage')
-})
 // app.all('/api/myFeed', (req, res, next) => {
 //   console.log("I'm Here!")
 //   res.status(200)
@@ -55,7 +49,6 @@ app.use((err, req, res) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
- 
   // render the error page
   res.status(err.status || 500);
   res.render('error');
