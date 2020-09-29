@@ -1,18 +1,7 @@
 import React, { useState, useEffect } from "react";
 import '../EventsContainer/eventsContainer.css'
 function EventsContainer() {
-  const [events, setEvents] = useState([
-    {
-      name: "צביעה",
-      city: "שדרות",
-      description: "בואו לצבוע את הבית",
-    },
-    {
-      name: "צביעה",
-      city: "שדרות",
-      description: "בואו לצבוע את הבית",
-    },
-  ]);
+  const [events, setEvents] = useState([]);
 
   useEffect(() => {
     function getEvents() {
