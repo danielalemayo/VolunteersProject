@@ -26,10 +26,11 @@ function EventsContainer() {
   }, []);
 
   const mapEvents = events.map((event, index) => (
-    <li key={index} className="item">
-      <strong >{event.name}</strong>
-      <p >{event.city}<br></br>
-      {event.description}
+    <li key={index}>
+      <p className="Event">
+        <h4 >{event.name}</h4>
+        {event.city}<br></br>
+        {event.description}
       </p>
     </li>
   ));

@@ -1,6 +1,65 @@
+/* Size and location css*/
+
+* {
+    text-align: center;
+}
+
 .Page {
     display: flex;
-    height: 100%;
+    height: 400px;
     width: 100%;
-border: blue 3px solid;
+    border: blue 3px solid;
+    justify-content: space-between;
+}
+
+.Activity {
+    border: 2px solid green;
+    width: 300px;
+    min-height: 200px;
+}
+
+.Pic {
+    margin-top: 5px;
+    border: 2px solid rgb(251, 220, 161);
+    width: 80px;
+    height: 100px;
+}
+
+.section1 {
+    display: flex;
+    justify-content: space-around;
+    background-color: teal;
+    border: 2px solid;
+}
+
+.MyFeedHeder {
+    display: inline;
+    border: 2px solid;
+    @media (max-width: 500px) {}
+}
+
+@media (max-width: 500px) {
+    .section1 {
+        height: fit-content;
+        flex-wrap: wrap;
+    }
+}
+
+.section2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 3px solid purple;
+}
+@media (max-width: 500px){
+    .section2{
+        height: fit-content;
+        flex-wrap: wrap;
+    }
+}
+
+.Buttons {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
 }
