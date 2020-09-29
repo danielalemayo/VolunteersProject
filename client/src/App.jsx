@@ -1,16 +1,22 @@
 import React from 'react';
-import {BrowserRouter} from 'react-router-dom'
-import MyFeed from './components/myFeed'
-// import logo from './logo.svg';
-// import './App.css';
-// import routUser from './../../routes/api/users'
-// const routUser = require('./../../routes/api/users')
+import MyFeed from './components/myFeed';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import NavBar from './components/Navbar/Navbar';
+import { SignUp, Login } from './pages';
+import './App.css';
+import GetUser from './components/GetUsers';
+
 function App() {
   return (
     <BrowserRouter>
-    <MyFeed/>
+      <NavBar />
+      <Switch>
+        <Route path="/getUsers" exact component={GetUser} />
+        <Route path="/login" exact component={Login} />
+        <Route path="/signUp" exact component={SignUp} />
+        <Route path="/myFeed" exact component={MyFeed} />
+      </Switch>
     </BrowserRouter>
-    
-    
-  )}
+  );
+}
 export default App;

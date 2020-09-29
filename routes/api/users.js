@@ -1,35 +1,21 @@
 const express = require('express');
-const User = require('../../models/users-model');
+const userController = require('../../controller/users-controller');
 
 const router = express.Router();
 
 /* GET users listing. */
-router.post('/', async (req, res) => {
 
-  const { name, email, password } = req.body;
+router.route('/')
+  .get(userController.getAllUsers);
 
-  try {
-    let user = await User.findOne({ email });
+router.route('/signup')
+  .post(userController.createUser);
 
-    if (user) {
-      return res
-        .status(400)
-        .json({ errors: [{ msg: 'User already exists' }] });
-    }
-
-    user = new User({
-      name,
-      email,
-      password
-    });
-
-   
-    await user.save();
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send('Server error');
-  }
-
-});
-
+// this is how specify it the ID in the URL
+router.route('/:id')
+  .get(userController.getUser)
+  .patch(userController.updateUser)
+  .delete(userController.deleteUser);
+// router.route('/').get(userController.getAllUsers);
+// router.route('/register').get(userController.register);
 module.exports = router;

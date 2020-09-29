@@ -8,6 +8,7 @@ const cors = require('cors');
 const indexRouter = require('./routes/api/index');
 const usersRouter = require('./routes/api/users');
 const eventsRouter = require('./routes/api/myFeed');
+
 const connectDB = require('./config/db');
 // Connect Database
 connectDB();
@@ -28,16 +29,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Added to serve client static files
 app.use(express.static(path.resolve(__dirname, 'client/build')));
 
-// app.use('/', indexRouter);
-// app.use('/users', usersRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/index', indexRouter);
 app.use('/api/myFeed', eventsRouter);
-// app.all('/api/myFeed', (req, res, next) => {
-//   console.log("I'm Here!")
-//   res.status(200)
-//   next()
-// });
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
