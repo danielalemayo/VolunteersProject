@@ -6,7 +6,9 @@ const router = express.Router();
 /* GET users listing. */
 
 router.route('/')
-  .get(userController.getAllUsers)
+  .get(userController.getAllUsers);
+
+router.route('/signup')
   .post(userController.createUser);
 
 // this is how specify it the ID in the URL

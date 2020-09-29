@@ -1,6 +1,7 @@
-import React from "react"
-import './signupcs.css'
+import React from "react";
 
+
+  
 function Login() {
     
     return (
@@ -8,12 +9,12 @@ function Login() {
         <form action="login">
             <h1>Login</h1>
             <div>
-            <input type="text" placeholder="מייל" />
-            <label>:מייל</label>
+            <input type="text" id="email" placeholder="מייל" />
+            <label> :מייל</label>
           </div>
           <div>
-            <input type="password" placeholder="סיסמא" />
-            <label>:סיסמא</label>
+            <input type="password" id="password" placeholder="סיסמא" />
+            <label> :סיסמא</label>
           </div>
             <button >Submit</button>
         </form>
