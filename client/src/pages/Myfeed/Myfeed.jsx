@@ -1,5 +1,5 @@
 import React from "react";
-import EventsContainer from "../../EventsContainer/EventsContainer";
+import EventsContainer from "../../components/EventsContainer/EventsContainer";
 import styled, { css } from 'styled-components';
 import './myFeed.css'
 import { Link } from 'react-router-dom'
@@ -32,10 +32,9 @@ const ImgPic = styled.img`
 
 function MyFeed() {
   return (
-    <div >
+    <div className="Page">
       <div className="section1">
         <ImgPic />
-        
         <h2 className="MyFeedHeder">My Feed</h2>
         <div className="Buttons">
           <Button as={Link} href="/api/events/createVolunteer">בוא תן יד</Button>
@@ -44,7 +43,7 @@ function MyFeed() {
       </div>
       <div className="section2">
         <div className="Activity">Activity</div>
-        <EventsContainer  />
+        <EventsContainer />
       </div>
     </div>
   );

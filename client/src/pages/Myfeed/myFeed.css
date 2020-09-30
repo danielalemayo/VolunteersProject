@@ -6,16 +6,18 @@
 
 .Page {
     display: flex;
-    height: 400px;
     width: 100%;
     border: blue 3px solid;
-    justify-content: space-between;
+    flex-direction: column;
 }
+
 
 .Activity {
     border: 2px solid green;
-    width: 300px;
-    min-height: 200px;
+    width: 350px;
+    min-width: 200px;
+    min-height: 300px;
+    margin: 0;
 }
 
 .Pic {

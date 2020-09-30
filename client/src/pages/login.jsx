@@ -3,7 +3,7 @@ import './signupcs.css';
 
 function Login() {
   return (
-    <div className="Page">
+    <div className="Page1">
       <form action="login">
         <h1>Login</h1>
         <div>

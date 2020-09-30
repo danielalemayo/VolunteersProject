@@ -1,33 +1,38 @@
-import React, { useState, useEffect } from "react";
-import '../EventsContainer/eventsContainer.css'
+/* eslint-disable no-shadow */
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable react/jsx-one-expression-per-line */
+import React, { useState, useEffect } from 'react';
+import './eventsContainer.css';
+
 function EventsContainer() {
-  const [events, setEvents] = useState([]);
+  const [volunteeringEvents, setEvents] = useState([]);
 
   useEffect(() => {
-    function getEvents() {
-      fetch("http://localhost:3001/api/myFeed")
+    function getAllEvents() {
+      fetch('http://localhost:3001/api/myFeed')
         .then((response) => response.json())
-        .then((events) => {
-          setEvents(events);
+        .then((volunteeringEvents) => {
+          console.log(volunteeringEvents);
+          setEvents(volunteeringEvents.data);
         });
     }
-    getEvents();
+    getAllEvents();
   }, []);
 
-  const mapEvents = events.map((event, index) => (
-    <li key={index}>
-      <p className="Event">
-        <h4 >{event.name}</h4>
-        {event.city}<br></br>
-        {event.description}
-      </p>
+  const renderEvents = volunteeringEvents.map((event) => (
+    <li key={event._id}>
+      <div>
+        שם: {event.name}
+      </div>
+      <div>עיר: {event.city}</div>
+      <div>תיאור: {event.description}</div>
     </li>
   ));
 
   return (
-    <div className="Container">
-      <ul>{mapEvents}</ul>
-    </div>
+    <ul className="Container">
+      {renderEvents}
+    </ul>
   );
 }
 

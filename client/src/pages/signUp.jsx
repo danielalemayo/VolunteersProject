@@ -4,7 +4,7 @@ import React from "react";
 function Signup() { 
   
   return (
-    <div className="Page">
+    <div className="Page1">
       <form action="api/page/signup">
         <h1>SignUp</h1>
         <div>

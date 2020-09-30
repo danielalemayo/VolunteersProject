@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import '../../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Links from './Links';
@@ -23,7 +22,6 @@ function NavBar() {
   return (
     <Container>
       <Nav>
-        {/* <Logo /> */}
         <Links />
       </Nav>
     </Container>

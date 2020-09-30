@@ -30,6 +30,9 @@ function Links() {
           <Item>
             <Link to="/signUp" className="nav-link">SignUp</Link>
           </Item>
+          <Item>
+            <Link to="/myFeed" className="nav-link">My Feed</Link>
+          </Item>
         </List>
       </Collapse>
     </div>
