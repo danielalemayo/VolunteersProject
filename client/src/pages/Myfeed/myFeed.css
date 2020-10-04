@@ -1,5 +1,3 @@
-/* Size and location css*/
-
 * {
     text-align: center;
 }
@@ -7,7 +5,6 @@
 .Page {
     display: flex;
     width: 100%;
-    border: blue 3px solid;
     flex-direction: column;
 }
 
@@ -28,16 +25,16 @@
 }
 
 .section1 {
+    margin-bottom: 2rem;
+    height: 15rem;
     display: flex;
+    align-items: center;
     justify-content: space-around;
     background-color: teal;
-    border: 2px solid;
 }
 
 .MyFeedHeder {
     display: inline;
-    border: 2px solid;
-    @media (max-width: 500px) {}
 }
 
 @media (max-width: 500px) {
@@ -48,11 +45,12 @@
 }
 
 .section2 {
+    margin-bottom: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    border: 3px solid purple;
 }
+
 @media (max-width: 500px){
     .section2{
         height: fit-content;
@@ -65,3 +63,16 @@
     justify-content: space-around;
     flex-direction: column;
 }
+
+/* .aLink{
+    text-align: center;
+    display: inline-block; 
+    border-radius: 3px;
+    padding: 0.5rem 0;
+    margin: 0.5rem 1rem;
+    width: 10rem;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    text-decoration: none;
+} */

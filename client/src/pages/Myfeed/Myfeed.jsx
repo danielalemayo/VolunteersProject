@@ -1,48 +1,52 @@
-import React from "react";
-import EventsContainer from "../../components/EventsContainer/EventsContainer";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import './myFeed.css'
-import { Link } from 'react-router-dom'
+import EventsContainer from '../../components/EventsContainer/EventsContainer';
+import EventsCalendar from '../../components/Calender/Calender';
+import './myFeed.css';
 
 const Button = styled.a`
-  /* This renders the buttons above... Edit me! */
-  text-align: center;
-  display: inline-block;
-  border-radius: 3px;
-  padding: 0.5rem 0;
-  margin: 0.5rem 1rem;
-  width: 10rem;
-  background: transparent;
-  color: white;
-  border: 2px solid white;
-  text-decoration: none;
+text-align: center;
+/* text-size-adjust: auto; */
+display: inline-block;
+border-radius: 10rem;
+height: 4rem;
+padding: 0.5rem 0;
+margin: 0.5rem 1rem;
+width: 10rem;
+background: transparent; 
+color: white;
+border: 2px solid white;
+-webkit-text-decoration: none;
+text-decoration: none;
   /* The GitHub button is a primary button
    * edit this to target it specifically! */
-  ${props => props.primary && css`
+  ${(props) => props.primary && css`
     background: white;
     color: black;
   `}
-`
+`;
+// dd
 const ImgPic = styled.img`
- margin-top: 5px;
-    border: 2px solid rgb(251, 220, 161);
-    width: 80px;
-    height: 100px;
-`
-
+margin-top: 5px;
+border-radius: 10px;
+border: 2px solid rgb(251,220,161);
+width: 9rem;
+height: 10rem;
+`;
 function MyFeed() {
   return (
     <div className="Page">
       <div className="section1">
         <ImgPic />
-        <h2 className="MyFeedHeder">My Feed</h2>
+        <h2 className="MyFeedHeder">ברוכים הבאים</h2>
         <div className="Buttons">
-          <Button as={Link} href="/api/events/createVolunteer">בוא תן יד</Button>
-          <Button as={Link} href="/api/events/askVolunteer"> ? צריך מתנדברים </Button>
+          <Button className="Button" as={Link} to="/createVolunteer" href="http://localhost/3000/createvolunteer">בוא תן יד</Button>
+          <Button className="Button" as={Link} to="/createEvent" href="http://localhost/3000/createevent">? צריך מתנדבים</Button>
         </div>
       </div>
       <div className="section2">
-        <div className="Activity">Activity</div>
+        <EventsCalendar />
         <EventsContainer />
       </div>
     </div>

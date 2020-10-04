@@ -1,8 +1,6 @@
 import React from "react";
 
-
 function Signup() { 
-  
   return (
     <div className="Page1">
       <form action="api/page/signup">
@@ -29,9 +27,9 @@ function Signup() {
             <label>:אישור סיסמא</label>
           </div>
         </div>
-        <button type="submit" >Add New</button>
+        <button type="submit">Add New</button>
       </form>
     </div>
-  )
+  );
 }
 export default Signup;

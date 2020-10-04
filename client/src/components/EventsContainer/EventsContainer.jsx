@@ -1,6 +1,3 @@
-/* eslint-disable no-shadow */
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState, useEffect } from 'react';
 import './eventsContainer.css';
 
@@ -20,12 +17,20 @@ function EventsContainer() {
   }, []);
 
   const renderEvents = volunteeringEvents.map((event) => (
-    <li key={event._id}>
+    <li key={event.name} className="event">
+      <h5>
+        שם:
+        {' '}
+        {event.name}
+      </h5>
       <div>
-        שם: {event.name}
+        עיר:
+        {event.city}
       </div>
-      <div>עיר: {event.city}</div>
-      <div>תיאור: {event.description}</div>
+      <div>
+        תיאור:
+        {event.description}
+      </div>
     </li>
   ));
 

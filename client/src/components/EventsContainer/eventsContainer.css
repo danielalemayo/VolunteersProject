@@ -9,3 +9,6 @@
 ul {
     list-style-type: none;
 }
+.event{
+    border-bottom: 2px black solid;
+}
