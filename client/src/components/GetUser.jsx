@@ -1,8 +1,8 @@
-const URL = 'localhost:3001/api/users'
+const URL = 'localhost:3001/api/users';
 
 export default function getUser(){
-    return fetch(`${URL}`,{
-        headers: {
+     return fetch(`${URL}`,{
+      headers: {
             Accept: 'application/json'
         },
     })
@@ -14,4 +14,5 @@ export default function getUser(){
         console.log(resObj);
         return resObj.user;
     })
+
 }

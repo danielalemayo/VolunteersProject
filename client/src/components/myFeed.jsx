@@ -1,11 +1,9 @@
 // import { response } from "express";
 import React, { useState, useEffect } from "react";
 
-export default function GetAllEvents() {
-    const [ volunteeringEvents, setEvents ] = useState([]);
-
-    useEffect(() => {
-        function getAllEvents (){
+export default function GetAllEvents() { 
+  const [volunteeringEvents, setEvents] = useState([]); useEffect(() => {
+    function getAllEvents (){
           fetch('http://localhost:3001/api/myFeed')
             .then(response => response.json())
             .then (volunteeringEvents =>{
