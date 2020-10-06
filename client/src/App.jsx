@@ -6,7 +6,7 @@ import { SignUp, Login } from './pages';
 import './App.css';
 import GetUser from './components/GetUsers';
 import CarouselPhotos from './components/CarouselPhotos';
-// import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 function App() {
   return (
