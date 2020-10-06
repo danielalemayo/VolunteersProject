@@ -18,4 +18,13 @@ function App() {
     </BrowserRouter>
   );
 }
+
+// import CUser from './user/SingUp';
+
+// function App() {
+//   return (
+//     <CUser />
+//   );
+// }
+
 export default App;
