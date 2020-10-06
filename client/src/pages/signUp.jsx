@@ -1,37 +1,68 @@
-import React from "react";
+import React from 'react';
+import { useForm } from 'react-hook-form';
 
+import './SingCss.css';
 
-function Signup() { 
-  
+function SignUp() {
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = async (data) => {
+    console.log(data);
+
+    try {
+      const response = await fetch('http://localhost:3001/api/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: data.fullName,
+          email: data.email,
+          password: data.password
+        })
+      });
+
+      const responseData = response.json();
+
+      if (!response.ok) {
+        throw new Error(responseData.message);
+      }
+
+      console.log(responseData);
+    } catch (err) {
+      throw new Error(err.message);
+    }
+  };
+
   return (
     <div className="Page">
-      <form action="api/page/signup">
+      <form action="api/page/signUp" onSubmit={handleSubmit(onSubmit)}>
         <h1>SignUp</h1>
         <div>
-          <div>
-            <input onChange="" name="firstName" type="text" placeholder="שם פרטי" />
-            <label for="firstName" name="firstName">:שם פרטי</label>
+
+          <div className="item">
+            <input name="fullName" type="text" placeholder="Name" ref={register} />
           </div>
-          <div>
-            <input type="text" placeholder="שם משפחה" />
-            <label> :שם משפחה</label>
+
+          <div className="item">
+            <input type="email" name="email" placeholder="Email" ref={register} />
           </div>
-          <div>
-            <input type="text" placeholder="מייל" />
-            <label> :מייל</label>
+
+          <div className="item">
+            <input type="password" name="password" placeholder="Password" ref={register} />
           </div>
-          <div>
-            <input type="password" placeholder="סיסמא" />
-            <label> :סיסמא</label>
+
+          <div className="item">
+            <input type="password" name="password" placeholder="Confirm Password" />
           </div>
-          <div>
-            <input type="password" placeholder="אישור סיסמא" />
-            <label>:אישור סיסמא</label>
-          </div>
+
         </div>
-        <button type="submit" >Add New</button>
+
+        <button className="item" type="submit">Add New</button>
+
       </form>
     </div>
-  )
+  );
 }
-export default Signup;
+
+export default SignUp;
