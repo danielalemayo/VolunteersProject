@@ -6,7 +6,7 @@ export default function GetUsers() {
     useEffect(() => {
 
         function getUsers() {
-            fetch('http://localhost:3001/api/users/5f6b1e8a699f4538a0393a2d')
+            fetch('http://localhost:3001/api/users/')
                 .then(response => response.json())
                 .then(users => {
                     console.log(users);
@@ -15,7 +15,7 @@ export default function GetUsers() {
         }
 
         getUsers()
-        
+
     }, []);
 
     const renderUsers = users.map(user => (

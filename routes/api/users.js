@@ -1,5 +1,5 @@
 const express = require('express');
-const userController = require('../../controlers/users-controller');
+const userController = require('../../controllers/users-controller');
 
 const router = express.Router();
 
@@ -14,8 +14,8 @@ router.route('/')
 
 // this is how specify it the ID in the URL
 router.route('/:id')
-  .get(userController.getUser)
   .patch(userController.updateUser)
+  .get(userController.getUser)
   .delete(userController.deleteUser);
 // router.route('/').get(userController.getAllUsers);
 // router.route('/register').get(userController.register);
