@@ -1,36 +1,44 @@
+import { Error } from 'mongoose';
 import React from 'react';
+import { useHistory } from 'react-router-dom';
+
 import './signupcs.css';
 
 function Login() {
+  const history = useHistory();
+
   const onSubmit = async (data) => {
+    const { email, password } = data;
+
+    console.log(' Enter to function (1)');
+    // console.log(password);
 
     try {
-      const response = await fetch('http://localhost:3001/api/users/login', {
+      const respond = await fetch('localhost:3001/api/users/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          email: data.email,
-          password: data.password
+          email,
+          password
         })
       });
-
-      const responseData = response.json();
-
-      if (!response.ok) {
-        throw new Error(responseData.message);
+      console.log(' after try (2)');
+      const respondData = respond.json();
+      if (respondData === null) {
+        return <h1>No User Fund</h1>;
       }
-
-      console.log(responseData);
-    } catch (err) {
-      throw new Error(err.message);
+      history.push('/profile');
+    } catch (error) {
+      throw new Error(error.message);
     }
+    console.log(' after catch (2)');
   };
 
   return (
     <div className="Page">
-      <form className="bodyLog" action="api/page/signUp" onSubmit={onSubmit}>
+      <form className="bodyLog" action="api/users/login" onSubmit={onSubmit}>
         <div className="cont">
           <div className="form sign-up">
             <h2>Login</h2>

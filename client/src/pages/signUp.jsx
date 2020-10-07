@@ -1,9 +1,12 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router-dom';
+
 import './signupcs.css';
 
 function SignUp() {
   const { register, handleSubmit } = useForm();
+  const history = useHistory();
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -26,8 +29,7 @@ function SignUp() {
       if (!response.ok) {
         throw new Error(responseData.message);
       }
-
-      console.log(responseData);
+      history.push('/profile');
     } catch (err) {
       throw new Error(err.message);
     }

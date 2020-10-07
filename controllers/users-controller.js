@@ -139,12 +139,16 @@ exports.singUp = async (req, res) => {
 exports.login = async (req, res, next) => {
 // 1) destructuring req.body from client
   const { email, password } = req.body;
+  console.log(' server login function (1)');
+  //console.log(email);
+  //console.log(password);
 
   let existingUser;
 
   try {
     // 2) check in DB if obj is exists
-    existingUser = await User.findOne({ email });
+    console.log(' server inside try function (2)');
+    existingUser = await User.findOne({ email: email });
   } catch (err) {
     const error = new Error(
       'Login in failed, please try again later.',
@@ -152,15 +156,19 @@ exports.login = async (req, res, next) => {
     );
     return next(error);
   }
+  console.log(' server after try function (3)');
+  //console.log(existingUser);
 
   // 3) check if obj is exists because the query return null in case is not exists
   if (!existingUser || existingUser.password !== password) {
+    console.log(' server inside if statment (4)');
     const error = new Error(
       'Invalid credentials, could not log you in.',
       401,
     );
     return next(error);
   }
+  console.log(' server after if statment (5)');
 
   return res.status(200).json({ message: 'Logged in!' });
 };

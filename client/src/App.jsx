@@ -6,6 +6,7 @@ import NavBar from './components/Navbar/Navbar';
 import SignUp from './pages/signUp';
 import Login from './pages/login';
 import GetUser from './components/GetUsers';
+import Profile from './pages/Profile';
 import './App.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route path="/getUsers" exact component={GetUser} />
+        <Route path="/profile" exact component={Profile} />
         <Route path="/login" exact component={Login} />
         <Route path="/signUp" exact component={SignUp} />
         <Route path="/myFeed" exact component={MyFeed} />
