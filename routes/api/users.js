@@ -9,8 +9,10 @@ router.route('/')
   .get(userController.getAllUsers)
   .post(userController.createUser);
 
-// router.route('/signup')
-//   .post(userController.createUser);
+router.route('/signUp')
+  .post(userController.singUp);
+router.route('/login')
+  .post(userController.login);
 
 // this is how specify it the ID in the URL
 router.route('/:id')

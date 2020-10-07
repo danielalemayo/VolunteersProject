@@ -1,14 +1,14 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
 import MyFeed from './components/myFeed';
-import { BrowserRouter,Route,Switch} from 'react-router-dom';
 import NavBar from './components/Navbar/Navbar';
-import SignUp from './pages/SignUp';
-import Login from './pages/Login';
-import './App.css';
+import SignUp from './pages/signUp';
+import Login from './pages/login';
 import GetUser from './components/GetUsers';
+import './App.css';
 
 function App() {
-
   return (
     <BrowserRouter>
       <NavBar />
@@ -20,6 +20,6 @@ function App() {
       </Switch>
     </BrowserRouter>
   );
-
 }
+
 export default App;

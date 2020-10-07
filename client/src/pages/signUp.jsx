@@ -9,7 +9,7 @@ function SignUp() {
     console.log(data);
 
     try {
-      const response = await fetch('http://localhost:3001/api/users', {
+      const response = await fetch('http://localhost:3001/api/users/signUp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -57,26 +57,58 @@ function SignUp() {
               </div>
             </div>
             <button className="submit" type="submit">Add New</button>
-            <a className="forgot-pass" href='login' >Login</a>
-            </div>
-            <div className="sub-cont">
-              <div className="img">
+            <a className="forgot-pass" href="login">Login</a>
+
+          </div>
+
+          <div className="sub-cont">
+            <div className="img">
               <div className="img-text m-in">
                 <h2>sign up</h2>
                 <p>text for sighup</p>
               </div>
               <div className="img-btn">
                 <span className="m-up">Sign Up</span>
-                 </div>
-               </div>
-              <div className="form sign-up">
+              </div>
+            </div>
+
+            <div className="form sign-up">
             </div>
           </div>
         </div>
       </form>
     </div>
   );
-
 }
 
 export default SignUp;
+
+// return (
+//   <div className="Page">
+//     <form action="api/page/signUp" onSubmit={handleSubmit(onSubmit)}>
+//       <h1>SignUp</h1>
+//       <div>
+
+//         <div className="item">
+//           <input name="fullName" type="text" placeholder="Name" ref={register} />
+//         </div>
+
+//         <div className="item">
+//           <input type="email" name="email" placeholder="Email" ref={register} />
+//         </div>
+
+//         <div className="item">
+//           <input type="password" name="password" placeholder="Password" ref={register} />
+//         </div>
+
+//         <div className="item">
+//           <input type="password" name="password" placeholder="Confirm Password" />
+//         </div>
+
+//       </div>
+
+//       <button className="item" type="submit">Add New</button>
+
+//     </form>
+//   </div>
+//);
