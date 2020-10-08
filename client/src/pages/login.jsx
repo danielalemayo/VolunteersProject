@@ -4,7 +4,7 @@ import './signupcs.css';
 function Login() {
   return (
     <div className="Page1">
-      <form action="login">
+      <form>
         <h1>Login</h1>
         <div>
           <input type="text" placeholder="מייל" />

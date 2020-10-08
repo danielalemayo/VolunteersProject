@@ -9,12 +9,14 @@ function EventsContainer() {
       fetch('http://localhost:3001/api/myFeed')
         .then((response) => response.json())
         .then((volunteeringEvents) => {
-          console.log(volunteeringEvents);
           setEvents(volunteeringEvents.data);
         });
     }
     getAllEvents();
   }, []);
+  const handleClick = () => {
+    
+  };
 
   const renderEvents = volunteeringEvents.map((event) => (
     <li key={event.name} className="event">
@@ -23,14 +25,14 @@ function EventsContainer() {
         {' '}
         {event.name}
       </h5>
-      <div>
+      <p>
         עיר:
         {event.city}
-      </div>
-      <div>
+        <br />
         תיאור:
         {event.description}
-      </div>
+      </p>
+      <button className="button" type="submit" onClick={handleClick}>השתתף</button>
     </li>
   ));
 

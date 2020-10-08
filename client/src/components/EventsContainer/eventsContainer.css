@@ -1,14 +1,34 @@
 .Container {
-    border: blue solid 1px;
+    border-left:burlywood solid 3px;
+    border-right: burlywood solid 3px;
     width: 350px;
     min-width: 200px;
     min-height: 300px;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 ul {
     list-style-type: none;
 }
+
 .event{
     border-bottom: 2px black solid;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.button{
+    text-size-adjust: auto;
+    display: inline-block;
+    border-radius: 10px;
+    background: #36799e;
+    color: white;
+    height: 2rem;
+    width: 5rem;
+    margin-bottom: 2px;
 }

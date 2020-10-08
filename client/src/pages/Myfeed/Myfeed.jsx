@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import EventsContainer from '../../components/EventsContainer/EventsContainer';
-import EventsCalendar from '../../components/Calender/Calender';
+import EventsCalendar from '../../components/eventsCalender/EventsCalendar';
 import './myFeed.css';
 
 const Button = styled.a`
@@ -26,7 +26,7 @@ text-decoration: none;
     color: black;
   `}
 `;
-// dd
+
 const ImgPic = styled.img`
 margin-top: 5px;
 border-radius: 10px;
@@ -34,12 +34,16 @@ border: 2px solid rgb(251,220,161);
 width: 9rem;
 height: 10rem;
 `;
-function MyFeed() {
+
+function MyFeed({ user }) {
   return (
     <div className="Page">
       <div className="section1">
         <ImgPic />
-        <h2 className="MyFeedHeder">ברוכים הבאים</h2>
+        <h2 className="MyFeedHeder">
+          ברוך הבא
+          { console.log(user) }
+        </h2>
         <div className="Buttons">
           <Button className="Button" as={Link} to="/createVolunteer" href="http://localhost/3000/createvolunteer">בוא תן יד</Button>
           <Button className="Button" as={Link} to="/createEvent" href="http://localhost/3000/createevent">? צריך מתנדבים</Button>

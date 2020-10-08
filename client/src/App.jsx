@@ -15,8 +15,8 @@ function App() {
         <Route path="/login" exact component={Login} />
         <Route path="/signUp" exact component={SignUp} />
         <Route path="/myFeed" exact component={Myfeed} />
-        {/* <Route path="/createVolunteer" exact component={} />
-        <Route path="/createEvent" exact component={} /> */}
+        {/* <Route path="/createVolunteer" exact component={CreateVolunteer} /> */}
+        {/*<Route path="/createEvent" exact component={} /> */}
       </Switch>
     </BrowserRouter>
   );
