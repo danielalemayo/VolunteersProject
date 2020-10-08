@@ -29,20 +29,19 @@ text-decoration: none;
 
 const ImgPic = styled.img`
 margin-top: 5px;
-border-radius: 10px;
+border-radius: 50%;
 border: 2px solid rgb(251,220,161);
 width: 9rem;
 height: 10rem;
 `;
 
-function MyFeed({ user }) {
+function MyFeed() {
   return (
     <div className="Page">
       <div className="section1">
         <ImgPic />
         <h2 className="MyFeedHeder">
           ברוך הבא
-          { console.log(user) }
         </h2>
         <div className="Buttons">
           <Button className="Button" as={Link} to="/createVolunteer" href="http://localhost/3000/createvolunteer">בוא תן יד</Button>

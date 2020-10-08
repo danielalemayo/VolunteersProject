@@ -14,9 +14,6 @@ function EventsContainer() {
     }
     getAllEvents();
   }, []);
-  const handleClick = () => {
-    
-  };
 
   const renderEvents = volunteeringEvents.map((event) => (
     <li key={event.name} className="event">
@@ -32,7 +29,7 @@ function EventsContainer() {
         תיאור:
         {event.description}
       </p>
-      <button className="button" type="submit" onClick={handleClick}>השתתף</button>
+      <button className="button" type="submit">השתתף</button>
     </li>
   ));
 
