@@ -1,55 +1,48 @@
-import { Error } from 'mongoose';
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 
 import './signupcs.css';
 
 function Login() {
   const history = useHistory();
+  const { register, handleSubmit } = useForm();
 
   const onSubmit = async (data) => {
-    const { email, password } = data;
-
-    console.log(' Enter to function (1)');
-    // console.log(password);
-
+    console.log(data.email);
     try {
-      const respond = await fetch('localhost:3001/api/users/login', {
+      const respond = await fetch('http://localhost:3001/api/users/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          email,
-          password
+          email: data.email,
+          password: data.password
         })
       });
-      console.log(' after try (2)');
-      const respondData = respond.json();
-      if (respondData === null) {
-        return <h1>No User Fund</h1>;
-      }
+
+      console.log(respond.json());
       history.push('/profile');
     } catch (error) {
-      throw new Error(error.message);
+      console.error(error);
     }
-    console.log(' after catch (2)');
   };
 
   return (
     <div className="Page">
-      <form className="bodyLog" action="api/users/login" onSubmit={onSubmit}>
+      <form className="bodyLog" onSubmit={handleSubmit(onSubmit)}>
         <div className="cont">
           <div className="form sign-up">
             <h2>Login</h2>
             <div>
               <div className="item">
                 <span>Email Address</span>
-                <input type="email" name="email" />
+                <input type="email" name="email" ref={register} />
               </div>
               <div className="item">
                 <span>Password</span>
-                <input type="password" name="password" />
+                <input type="password" name="password" ref={register} />
               </div>
             </div>
             <button className="submit" type="submit">submit</button>
@@ -64,8 +57,6 @@ function Login() {
               <div className="img-btn">
                 <span className="m-in">Sign In</span>
               </div>
-            </div>
-            <div className="form sign-up">
             </div>
           </div>
         </div>
