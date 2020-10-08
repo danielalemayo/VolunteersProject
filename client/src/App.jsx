@@ -1,10 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
 import NavBar from './components/Navbar/Navbar';
-import { SignUp, Login } from './pages';
-import './App.css';
+import SignUp from './pages/signUp';
+import Login from './pages/login';
 import GetUser from './components/GetUsers';
 import Myfeed from './pages/Myfeed/Myfeed';
+import './App.css';
 
 function App() {
   return (
@@ -21,4 +23,5 @@ function App() {
     </BrowserRouter>
   );
 }
+
 export default App;

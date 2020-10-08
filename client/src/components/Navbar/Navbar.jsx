@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import Links from './Links';
 
 const Nav = styled.nav.attrs({
-  className: 'navbar navbar-expand-lg navbar-dark bg-dark'
+  className: 'navbar navbar-expand-lg navbar-dark bg-dark  '
 })`
 margin-bottom: 20 px;
 `;

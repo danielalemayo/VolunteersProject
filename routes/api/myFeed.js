@@ -1,5 +1,5 @@
 const express = require('express');
-const eventCtrl = require('../../controlers/ctrlEvents');
+const eventCtrl = require('../../controllers/ctrlEvents');
 
 const router = express.Router();
 

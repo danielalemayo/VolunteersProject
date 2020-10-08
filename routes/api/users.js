@@ -1,20 +1,23 @@
 const express = require('express');
-const userController = require('../../controlers/users-controller');
+const userController = require('../../controllers/users-controller');
 
 const router = express.Router();
 
 /* GET users listing. */
 
 router.route('/')
-  .get(userController.getAllUsers);
-
-router.route('/signup')
+  .get(userController.getAllUsers)
   .post(userController.createUser);
+
+router.route('/signUp')
+  .post(userController.singUp);
+router.route('/login')
+  .post(userController.login);
 
 // this is how specify it the ID in the URL
 router.route('/:id')
-  .get(userController.getUser)
   .patch(userController.updateUser)
+  .get(userController.getUser)
   .delete(userController.deleteUser);
 // router.route('/').get(userController.getAllUsers);
 // router.route('/register').get(userController.register);
