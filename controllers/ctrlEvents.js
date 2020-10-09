@@ -3,7 +3,7 @@ const EventsSchema = require('../models/VolunteeringEvents-model');
 exports.getAllEvents = async (req, res) => {
   try {
     const getEvents = await EventsSchema.find();
-    console.log(getEvents);
+
     res.status(200).json({
       status: 'success',
       results: getEvents.length,
