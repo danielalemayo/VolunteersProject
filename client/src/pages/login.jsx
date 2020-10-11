@@ -29,7 +29,7 @@ function Login() {
 
   return (
     <div className="Page">
-      <form className="bodyLog" onSubmit={handleSubmit(onSubmit)}>
+      <form className="bodyLog" onSubmit={handleSubmit(onSubmit)} method="POST">
         <div className="cont">
           <div className="form sign-up">
             <h2>Login</h2>
