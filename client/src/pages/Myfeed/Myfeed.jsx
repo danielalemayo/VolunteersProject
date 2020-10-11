@@ -28,6 +28,7 @@ text-decoration: none;
 `;
 
 const ImgPic = styled.img`
+margin-left: 10%;
 margin-top: 5px;
 border-radius: 50%;
 border: 2px solid rgb(251,220,161);

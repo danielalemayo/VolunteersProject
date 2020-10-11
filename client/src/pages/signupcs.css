@@ -5,9 +5,9 @@
     box-sizing: border-box;
 }
 .bodyLog{
-    width: 100%;
-    height: 100vh;
     display: flex;
+    width: 100%;
+    height: 100%;
     justify-content: center;
     align-items: center;
     background:-webkit-linear-gradient(left,#7579ff,#b224ef)
@@ -23,8 +23,15 @@ input,button{
     width: 990px;
     height: 650px;
     background:#fff;
+    margin-bottom: 5%;
+    margin-top: 5%;
 }
+
 .form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: relative;
     width: 600px;
     height: 80%;

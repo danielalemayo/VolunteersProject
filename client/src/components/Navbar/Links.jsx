@@ -1,16 +1,17 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Collapse = styled.div.attrs({
   className: 'collapse navbar-collapse'
-})``
+})``;
 const List = styled.div.attrs({
   className: 'navbar-nav mr-auto'
-})``
+})``;
 const Item = styled.div.attrs({
   className: 'collapse navbar-collapse'
-})``
+})``;
+
 class Links extends React.Component {
   render() {
     return (
@@ -36,4 +37,5 @@ class Links extends React.Component {
     )
   }
 }
-export default Links
+
+export default Links;

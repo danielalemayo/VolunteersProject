@@ -1,7 +1,12 @@
-.Page1{
+.Page1 {
   display: flex;
   justify-content: center;
-  align-content:center;
+  align-content: center;
 }
 
 
+/* @media (min-width: 500px) {
+  .navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+  }
+} */

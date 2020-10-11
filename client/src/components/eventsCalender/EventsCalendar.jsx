@@ -7,7 +7,6 @@ function EventsCalendar() {
 
   const onChange = () => {
     setDate(date);
-    console.log(date);
   };
 
   return (
