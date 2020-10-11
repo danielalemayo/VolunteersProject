@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 
+import urlBase from '../utils/utils';
 import './signupcs.css';
 
 function SignUp() {
@@ -9,10 +10,8 @@ function SignUp() {
   const history = useHistory();
 
   const onSubmit = async (data) => {
-    console.log(data);
-
     try {
-      const response = await fetch('http://localhost:3001/api/users/signUp', {
+      const response = await fetch(`${urlBase()}/api/users/signUp`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -36,7 +35,7 @@ function SignUp() {
   };
   return (
     <div className="Page">
-      <form className="bodyLog" action="api/page/signUp" onSubmit={handleSubmit(onSubmit)}>
+      <form className="bodyLog" action="api/page/signUp" onSubmit={handleSubmit(onSubmit)} method="POST">
         <div className="cont">
           <div className="form sign-up">
             <h2>SignUp</h2>
