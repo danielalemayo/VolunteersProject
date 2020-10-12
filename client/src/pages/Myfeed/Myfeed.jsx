@@ -45,8 +45,8 @@ function MyFeed() {
           ברוך הבא
         </h2>
         <div className="Buttons">
-          <Button className="Button" as={Link} to="/createVolunteer" href="http://localhost/3000/createvolunteer">בוא תן יד</Button>
-          <Button className="Button" as={Link} to="/createEvent" href="http://localhost/3000/createevent">? צריך מתנדבים</Button>
+          <Button className="Button" as={Link} to="/createVolunteer">בוא תן יד</Button>
+          <Button className="Button" as={Link} to="/createEvent">? צריך מתנדבים</Button>
         </div>
       </div>
       <div className="section2">

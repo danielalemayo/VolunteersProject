@@ -80,33 +80,3 @@ function SignUp() {
 }
 
 export default SignUp;
-
-// return (
-//   <div className="Page">
-//     <form action="api/page/signUp" onSubmit={handleSubmit(onSubmit)}>
-//       <h1>SignUp</h1>
-//       <div>
-
-//         <div className="item">
-//           <input name="fullName" type="text" placeholder="Name" ref={register} />
-//         </div>
-
-//         <div className="item">
-//           <input type="email" name="email" placeholder="Email" ref={register} />
-//         </div>
-
-//         <div className="item">
-//           <input type="password" name="password" placeholder="Password" ref={register} />
-//         </div>
-
-//         <div className="item">
-//           <input type="password" name="password" placeholder="Confirm Password" />
-//         </div>
-
-//       </div>
-
-//       <button className="item" type="submit">Add New</button>
-
-//     </form>
-//   </div>
-//);
