@@ -100,7 +100,7 @@ exports.singUp = async (req, res) => {
     // 2) check in DB if obj is exists
     existingUser = await User.findOne({ email });
   } catch (err) {
-    res.status(500).json({
+    res.status(409).json({
       status: 'failed',
       message: 'Signing up failed, please try again later.',
       ERROR: err.message,

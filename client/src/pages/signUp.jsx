@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 
+import urlBase from '../utils/utils';
 import './signupcs.css';
 
 function SignUp() {
@@ -9,10 +10,8 @@ function SignUp() {
   const history = useHistory();
 
   const onSubmit = async (data) => {
-    console.log(data);
-
     try {
-      const response = await fetch('http://localhost:3001/api/users/signUp', {
+      const response = await fetch(`${urlBase()}/api/users/signUp`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -36,7 +35,7 @@ function SignUp() {
   };
   return (
     <div className="Page">
-      <form className="bodyLog" action="api/page/signUp" onSubmit={handleSubmit(onSubmit)}>
+      <form className="bodyLog" action="api/page/signUp" onSubmit={handleSubmit(onSubmit)} method="POST">
         <div className="cont">
           <div className="form sign-up">
             <h2>SignUp</h2>
@@ -81,33 +80,3 @@ function SignUp() {
 }
 
 export default SignUp;
-
-// return (
-//   <div className="Page">
-//     <form action="api/page/signUp" onSubmit={handleSubmit(onSubmit)}>
-//       <h1>SignUp</h1>
-//       <div>
-
-//         <div className="item">
-//           <input name="fullName" type="text" placeholder="Name" ref={register} />
-//         </div>
-
-//         <div className="item">
-//           <input type="email" name="email" placeholder="Email" ref={register} />
-//         </div>
-
-//         <div className="item">
-//           <input type="password" name="password" placeholder="Password" ref={register} />
-//         </div>
-
-//         <div className="item">
-//           <input type="password" name="password" placeholder="Confirm Password" />
-//         </div>
-
-//       </div>
-
-//       <button className="item" type="submit">Add New</button>
-
-//     </form>
-//   </div>
-//);

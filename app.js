@@ -31,7 +31,7 @@ app.use(express.static(path.resolve(__dirname, 'client/build')));
 
 app.use('/api/index', indexRouter);
 app.use('/api/users', usersRouter);
-app.use('/api/myFeed', eventsRouter);
+app.use('/api/myfeed', eventsRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
