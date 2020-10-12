@@ -8,8 +8,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-height: 300px;
+    overflow: auto;
 }
-
+p{
+    text-align: initial;
+}
+h5{
+    text-align: left;
+}
+h6{
+    display: inline-block;
+}
 ul {
     list-style-type: none;
 }

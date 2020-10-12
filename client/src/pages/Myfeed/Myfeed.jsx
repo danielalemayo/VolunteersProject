@@ -28,6 +28,7 @@ text-decoration: none;
 `;
 
 const ImgPic = styled.img`
+flex-shrink: 0;
 margin-left: 10%;
 margin-top: 5px;
 border-radius: 50%;
@@ -46,7 +47,7 @@ function MyFeed() {
         </h2>
         <div className="Buttons">
           <Button className="Button" as={Link} to="/createVolunteer">בוא תן יד</Button>
-          <Button className="Button" as={Link} to="/createEvent">? צריך מתנדבים</Button>
+          <Button className="Button" as={Link} to="/eventForm">? צריך מתנדבים</Button>
         </div>
       </div>
       <div className="section2">

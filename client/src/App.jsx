@@ -6,7 +6,7 @@ import SignUp from './pages/signUp';
 import Login from './pages/login';
 import GetUser from './components/GetUsers';
 import Myfeed from './pages/Myfeed/Myfeed';
-import CreateVolunteer from './pages/createVolunteer/createVolunteer';
+import EventForm from './pages/eventForm/eventForm';
 import './App.css';
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <Route path="/login" exact component={Login} />
         <Route path="/signUp" exact component={SignUp} />
         <Route path="/myFeed" exact component={Myfeed} />
-        <Route path="/createVolunteer" exact component={CreateVolunteer} />
+        <Route path="/eventForm" exact component={EventForm} />
         {/*<Route path="/createEvent" exact component={} /> */}
         <Route path="*"><Redirect to="/" /></Route>
       </Switch>

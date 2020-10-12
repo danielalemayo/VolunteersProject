@@ -15,9 +15,24 @@
     background-repeat: no-repeat;
     background-size: cover;
     /* background: -webkit-linear-gradient(left, #7579ff, #b224ef) */
-    background-image: url(../../img/VulonteerPic.jpg) ;
+    background-image: url(../../img/volunteers.jpg) ;
 }
-
+.my-form-control {
+    margin-right: 35px;
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .50rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
 input,
 button {
     border: none;
@@ -26,6 +41,7 @@ button {
 }
 
 .formCont {
+    display: flex;
     border-radius: 10%;
     overflow: hidden;
     position: relative;
@@ -46,6 +62,7 @@ button {
     width: 600px;
     height: 80%;
     padding: 2px 30px;
+    align-self: center;
     -webkit-transition: -webkit-transform 1.2s ease-in-out;
     transition: transform 1.2s ease-in-out;
     transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
@@ -70,6 +87,7 @@ h2 {
     font-size: 14px;
     font-weight: 600;
     color: black;
+    display: block;
 }
 
 input {
