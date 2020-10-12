@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-
+import { Redirect } from 'react-router-dom';
 import NavBar from './components/Navbar/Navbar';
 import SignUp from './pages/signUp';
 import Login from './pages/login';
@@ -20,6 +20,7 @@ function App() {
         <Route path="/myFeed" exact component={Myfeed} />
         <Route path="/createVolunteer" exact component={CreateVolunteer} />
         {/*<Route path="/createEvent" exact component={} /> */}
+        <Route path="*"><Redirect to="/" /></Route>
       </Switch>
     </BrowserRouter>
   );
