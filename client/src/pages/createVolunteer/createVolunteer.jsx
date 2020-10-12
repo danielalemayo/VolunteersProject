@@ -9,9 +9,7 @@ function CreateVolunteer(props) {
   const history = useHistory();
   const user = props.user;
 
-  const {
-    register, handleSubmit, watch, errors
-  } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -38,7 +36,7 @@ function CreateVolunteer(props) {
 
   return (
     <form method="POST" onSubmit={handleSubmit(onSubmit)}>
-      <form className="bodyForm">
+      <div className="bodyForm">
         <div className="formCont">
           <div className="form">
             <h2>Give a Hand</h2>
@@ -48,10 +46,10 @@ function CreateVolunteer(props) {
                 <input type="text" placeholder="Name what you offer volunteer for" name="name" ref={register} />
               </div>
               <div>
-              <div className="item">
-                <span>City</span>
-                <input type="text" placeholder="Where you can Volunteer" name="city" ref={register} />
-              </div>
+                <div className="item">
+                  <span>City</span>
+                  <input type="text" placeholder="Where you can Volunteer" name="city" ref={register} />
+                </div>
                 <div className="item">
                   <span>Category</span>
                   <select className="item" name="Category" ref={register}>
@@ -71,7 +69,7 @@ function CreateVolunteer(props) {
             </div>
           </div>
         </div>
-      </form>
+      </div>
     </form>
   );
 }
