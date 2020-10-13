@@ -14,9 +14,9 @@
     align-items: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* background: -webkit-linear-gradient(left, #7579ff, #b224ef) */
-    background-image: url(../../img/volunteers.jpg) ;
+    background-image: url(../../img/neil-thomas-SIU1Glk6v5k-unsplash.jpg);
 }
+
 .my-form-control {
     margin-right: 35px;
     display: block;
@@ -29,10 +29,11 @@
     color: #495057;
     background-color: #fff;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
+    border: 1px solid brown;
     border-radius: .50rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
+
 input,
 button {
     border: none;
@@ -41,6 +42,7 @@ button {
 }
 
 .formCont {
+    border: 2px brown solid;
     display: flex;
     border-radius: 10%;
     overflow: hidden;
@@ -74,6 +76,10 @@ h2 {
     text-align: center;
 }
 
+h6 {
+    margin: 0;
+}
+
 .item {
     color: black;
     border-radius: 20px;
@@ -81,6 +87,8 @@ h2 {
     width: 260px;
     margin: 25px auto;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .item span {
@@ -90,7 +98,8 @@ h2 {
     display: block;
 }
 
-input {
+input textarea {
+    border: 1px brown solid;
     border-radius: 20px;
     display: block;
     width: 100%;
@@ -101,7 +110,16 @@ input {
     text-align: center;
     font-family: 'Nunito', sans-serif;
 }
+textarea {
+    overflow: auto;
+    resize: vertical;
+    margin-top: 10px;
+    overflow: scroll;
+    border: 1px solid brown;
+}
+.descrition-input{
 
+}
 button {
     display: block;
     margin: 0 auto;

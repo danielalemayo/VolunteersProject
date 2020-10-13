@@ -10,6 +10,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 function EventForm(props) {
   const history = useHistory();
   const user = props.user;
+  const categories = ['Teaching', 'Help Homles', 'Driving lesons'];
   const [startDate, setStartDate] = useState(new Date());
 
   const { register, handleSubmit } = useForm();
@@ -42,28 +43,29 @@ function EventForm(props) {
       <div className="bodyForm">
         <div className="formCont">
           <div className="form">
-            <h2>Give a Hand</h2>
+            <h2>Take a Hand</h2>
             <div>
               <div className="item">
-                <span htmlFor="name"> General name</span>
-                <input type="text" placeholder="Name what you offer volunteer for" name="name" ref={register} />
+                <h6 htmlFor="name"> General name</h6>
+                <input type="text" placeholder="Name What you Need in generaly" name="name" ref={register} />
               </div>
               <div>
                 <div className="item">
-                  <span>City</span>
-                  <input type="text" placeholder="Where you can Volunteer" name="city" ref={register} />
+                  <h6>City</h6>
+                  <input type="text" placeholder="Witch city you need" name="city" ref={register} />
                 </div>
                 <div className="item">
-                  <span>Category</span>
+
+                  <h6>Category</h6>
                   <select className="item" name="category" ref={register}>
-                    <option value="teaching">teaching</option>
-                    <option value="male">male</option>
-                    <option value="other">other</option>
+                    {categories.map((item) => {
+                      return (<option ref={register} value={item}>{item}</option>);
+                    })}
                   </select>
                 </div>
               </div>
               <div className="item">
-                <span htmlFor="name"> Date</span>
+                <h6 htmlFor="name"> Date</h6>
                 {/* <input type="text" name="dateTime" ref={register}> */}
                 <DatePicker
                   ref={register}
@@ -81,8 +83,9 @@ function EventForm(props) {
                 {/* </input> */}
               </div>
               <div className="item">
-                <span>Description</span>
-                <input type="text" placeholder="Total volunteer description/ nots " name="description" ref={register} />
+                <h6>Description</h6>
+                <textarea className="descrition-input" type="text" placeholder="Total volunteer description/ nots " name="description" ref={register} />
+                {/* <input className="descrition-input" type="text" placeholder="Total volunteer description/ nots " name="description" ref={register} /> */}
               </div>
               <button className="submit" type="submit" value="Submit">Go</button>
             </div>
