@@ -1,11 +1,16 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-
 import NavBar from './components/Navbar/Navbar';
 import SignUp from './pages/signUp';
 import Login from './pages/login';
 import GetUser from './components/GetUsers';
-import Myfeed from './pages/Myfeed/Myfeed';
+import MyFeed from './pages/Myfeed/Myfeed';
+import logo from './img/LightBackLogo.png';
+
+
+
+// import GetStartedButton from './components/GetStartedButton'
+
 import './App.css';
 
 function App() {
@@ -16,10 +21,14 @@ function App() {
         <Route path="/getUsers" exact component={GetUser} />
         <Route path="/login" exact component={Login} />
         <Route path="/signUp" exact component={SignUp} />
-        <Route path="/myFeed" exact component={Myfeed} />
-        {/* <Route path="/createVolunteer" exact component={CreateVolunteer} /> */}
-        {/*<Route path="/createEvent" exact component={} /> */}
+        <Route path="/myFeed" exact component={MyFeed} />
       </Switch>
+     <img classname="Logo" src={logo} alt="logo" />
+      {/* <Button variant="primary" size="lg" active>
+        Primary button
+       </Button>{' '} */}
+
+
     </BrowserRouter>
   );
 }
