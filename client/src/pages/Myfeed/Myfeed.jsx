@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import EventsContainer from '../../components/EventsContainer/EventsContainer';
 import EventsCalendar from '../../components/eventsCalender/EventsCalendar';
+import ProfilePic from '../../img/sabine-ojeil-8KM_DyWGemw-unsplash.jpg';
 import './myFeed.css';
 
 const Button = styled.a`
@@ -28,6 +29,8 @@ text-decoration: none;
 `;
 
 const ImgPic = styled.img`
+background-image: url(${(props) => props.src});
+// user: the user that conected
 flex-shrink: 0;
 margin-left: 10%;
 margin-top: 5px;
@@ -41,13 +44,15 @@ function MyFeed() {
   return (
     <div className="Page">
       <div className="section1">
-        <ImgPic />
+        {/* <img className="profImg" alt="" /> */}
+        <ImgPic src={ProfilePic} />
         <h2 className="MyFeedHeder">
           ברוך הבא
         </h2>
         <div className="Buttons">
           <Button className="Button" as={Link} to="/createVolunteer">בוא תן יד</Button>
           <Button className="Button" as={Link} to="/eventForm">? צריך מתנדבים</Button>
+          {/* <Link className="Button" to={{}}>צריך מתנדבים</Link> */}
         </div>
       </div>
       <div className="section2">

@@ -176,7 +176,6 @@ a.forgot-pass:hover {
     top: 0;
     width: 900px;
     height: 100%;
-    background-image: url();
     background-size: cover;
     background-size: -webkit-transform 1.2s ease-in-out;
     transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
@@ -224,7 +223,7 @@ a.forgot-pass:hover {
     top: 0;
     width: 900px;
     height: 100%;
-    background-image: url();
+    /* background-image: url(); */
     background-size: cover;
     background-size: -webkit-transform 1.2s ease-in-out;
     transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;

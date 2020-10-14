@@ -7,10 +7,9 @@ import './signupcs.css';
 function Login() {
   const history = useHistory();
   const { register, handleSubmit } = useForm();
-
   const onSubmit = async (data) => {
     try {
-      await fetch('http://localhost:3001/api/users/login', {
+      const response = await fetch('http://localhost:3001/api/users/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -20,8 +19,10 @@ function Login() {
           password: data.password
         })
       });
-
-      history.push('/myFeed');
+      const newData = await response.json();
+      if (newData) {
+        history.push('/myFeed', { state: newData.existingUser });
+      }
     } catch (error) {
       console.error(error);
     }

@@ -41,6 +41,7 @@ function EventsContainer() {
 
   return (
     <ul className="Container">
+      <h3>All The Events</h3>
       {renderEvents}
     </ul>
   );

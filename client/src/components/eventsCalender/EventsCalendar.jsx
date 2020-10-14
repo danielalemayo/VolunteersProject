@@ -1,22 +1,18 @@
 import React, { useState } from 'react';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import './eventsCalander.css';
 
-function EventsCalendar() {
+function EventsCalendar(props) {
   const [date, setDate] = useState(new Date());
+  // ToDO Register Events list in user schema;
+  // const [registerEvents, setRegisterEvents] = useState([]);
 
-  const onChange = () => {
-    setDate(date);
-  };
+  const onChange = (newDate) => { setDate({ newDate }); };
 
   return (
     <div>
-      <Calendar
-        calendarType="Hebrew"
-        onChange={onChange}
-        value={date}
-      />
+
     </div>
   );
 }
+
 export default EventsCalendar;
