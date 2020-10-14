@@ -4,6 +4,15 @@ import './eventsContainer.css';
 function EventsContainer() {
   const [volunteeringEvents, setEvents] = useState([]);
 
+  const DateRender = (eventDate) => {
+    const newDate = new Date(eventDate);
+
+    const options = { month: 'long', day: 'numeric', weekday: 'long', hour: 'numeric', minute: 'numeric' };
+    const time = newDate.toLocaleDateString('ISR', options);
+
+    return time;
+  };
+
   useEffect(() => {
     function getAllEvents() {
       fetch('http://localhost:3001/api/myFeed')
@@ -33,7 +42,7 @@ function EventsContainer() {
         <br />
         <h6>eventDate:</h6>
         {' '}
-        {event.eventDate}
+        {DateRender(event.eventDate)}
       </p>
       <button className="button" type="submit">השתתף</button>
     </li>

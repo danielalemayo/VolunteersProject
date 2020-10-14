@@ -26,7 +26,7 @@ function EventForm() {
           name: data.name,
           city: data.city,
           category: data.category,
-          eventDate: startDate,
+          eventDate: startDate.getHours(),
           description: data.description
         })
       });
@@ -68,8 +68,8 @@ function EventForm() {
                 <h6 htmlFor="name"> Date</h6>
                 {/* <input type="text" name="dateTime" ref={register}> */}
                 <DatePicker
-                  ref={register}
-                  innerRef={register}
+                  // ref={register}
+                  // innerRef={register}
                   name="dateTime"
                   className="my-form-control"
                   selected={startDate}
