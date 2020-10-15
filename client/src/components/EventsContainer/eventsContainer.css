@@ -31,11 +31,3 @@ ul {
     text-align: end;
 }
 
-.button {
-    display: inline;
-    background: #36799e;
-    color: white;
-    height: 2rem;
-    width: 5rem;
-    margin-right: 0;
-}

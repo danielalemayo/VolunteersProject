@@ -44,7 +44,6 @@ function MyFeed() {
   return (
     <div className="Page">
       <div className="section1">
-        {/* <img className="profImg" alt="" /> */}
         <ImgPic src={ProfilePic} />
         <h2 className="MyFeedHeder">
           ברוך הבא
@@ -52,12 +51,11 @@ function MyFeed() {
         <div className="Buttons">
           <Button className="Button" as={Link} to="/createVolunteer">בוא תן יד</Button>
           <Button className="Button" as={Link} to="/eventForm">? צריך מתנדבים</Button>
-          {/* <Link className="Button" to={{}}>צריך מתנדבים</Link> */}
         </div>
       </div>
       <div className="section2">
         <EventsCalendar />
-        <EventsContainer />
+        <EventsContainer  />
       </div>
     </div>
   );

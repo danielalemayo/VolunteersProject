@@ -24,7 +24,7 @@ function Links() {
               <Link to="/signup" className="nav-link btn btn-outline-secondary">SignUp</Link>
             </li>
             <li className="nav-item">
-              <li><Link to="/login" className="nav-link btn btn-outline-secondary">Login</Link></li>
+              <Link to="/login" className="nav-link btn btn-outline-secondary">Login</Link>
             </li>
           </ul>
         </div>

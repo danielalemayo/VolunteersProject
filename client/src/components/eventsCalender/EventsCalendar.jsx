@@ -1,18 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './eventsCalander.css';
 
-function EventsCalendar(props) {
-  const [date, setDate] = useState(new Date());
-  // ToDO Register Events list in user schema;
-  // const [registerEvents, setRegisterEvents] = useState([]);
+function EventsCalendar() {
 
-  const onChange = (newDate) => { setDate({ newDate }); };
-
-  return (
-    <div>
-
-    </div>
-  );
+  return <div>Calendar</div>;
 }
 
 export default EventsCalendar;
