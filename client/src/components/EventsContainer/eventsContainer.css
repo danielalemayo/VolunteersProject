@@ -1,34 +1,42 @@
 .Container {
-    border-left:burlywood solid 3px;
+    border-left: burlywood solid 3px;
     border-right: burlywood solid 3px;
-    width: 350px;
+    width: 25rem;
     min-width: 200px;
     min-height: 300px;
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-height: 300px;
+    overflow: auto;
 }
-
+p{
+    text-align: initial;
+}
+h5{
+    text-align: left;
+}
+h6{
+    display: inline-block;
+}
 ul {
     list-style-type: none;
 }
 
-.event{
+.event {
     border-bottom: 2px black solid;
     width: 250px;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    text-align: end;
 }
 
-.button{
-    text-size-adjust: auto;
-    display: inline-block;
-    border-radius: 10px;
+.button {
+    display: inline;
     background: #36799e;
     color: white;
     height: 2rem;
     width: 5rem;
-    margin-bottom: 2px;
+    margin-right: 0;
 }

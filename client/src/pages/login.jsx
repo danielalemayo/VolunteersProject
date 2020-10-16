@@ -9,9 +9,8 @@ function Login() {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = async (data) => {
-    console.log(data.email);
     try {
-      const respond = await fetch('http://localhost:3001/api/users/login', {
+      await fetch('http://localhost:3001/api/users/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -22,7 +21,6 @@ function Login() {
         })
       });
 
-      console.log(respond.json());
       history.push('/myFeed');
     } catch (error) {
       console.error(error);
@@ -31,7 +29,7 @@ function Login() {
 
   return (
     <div className="Page">
-      <form className="bodyLog" onSubmit={handleSubmit(onSubmit)}>
+      <form className="bodyLog" onSubmit={handleSubmit(onSubmit)} method="POST">
         <div className="cont">
           <div className="form sign-up">
             <h2>Login</h2>

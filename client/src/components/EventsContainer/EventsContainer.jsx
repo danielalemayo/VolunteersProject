@@ -14,25 +14,28 @@ function EventsContainer() {
     }
     getAllEvents();
   }, []);
-  const handleClick = () => {
-    
-  };
 
   const renderEvents = volunteeringEvents.map((event) => (
     <li key={event.name} className="event">
       <h5>
-        שם:
+        <h6>name:</h6>
         {' '}
         {event.name}
       </h5>
       <p>
-        עיר:
+        <h6>city:</h6>
+        {' '}
         {event.city}
         <br />
-        תיאור:
+        <h6>description:</h6>
+        {' '}
         {event.description}
+        <br />
+        <h6>eventDate:</h6>
+        {' '}
+        {event.eventDate}
       </p>
-      <button className="button" type="submit" onClick={handleClick}>השתתף</button>
+      <button className="button" type="submit">השתתף</button>
     </li>
   ));
 

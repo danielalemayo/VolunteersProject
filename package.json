@@ -32,7 +32,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3",
     "rect": "^1.2.1",
-    "styled": "file:styled",
+    "styled": "^1.0.0",
     "styled-components": "^5.2.0"
   },
   "devDependencies": {
