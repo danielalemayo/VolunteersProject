@@ -19,6 +19,16 @@
     height: 100px;
 }
 
+.profImg {
+    flex-shrink: 0;
+    margin-left: 10%;
+    margin-top: 5px;
+    border-radius: 50%;
+    border: 2px solid rgb(251, 220, 161);
+    width: 9rem;
+    height: 10rem;
+}
+
 .section1 {
     margin-bottom: 2rem;
     height: 15rem;
@@ -32,6 +42,8 @@
     display: inline;
 }
 
+
+
 @media (max-width: 500px) {
     .section1 {
         height: fit-content;
@@ -44,7 +56,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    background-color: #fffed8;
 
 }
 

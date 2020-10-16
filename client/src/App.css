@@ -51,6 +51,9 @@ body {
 }
 
 
+*{
+  font-family: cursive;
+}
 
 /* @media (min-width: 500px) {
   .navbar-expand-lg .navbar-nav {

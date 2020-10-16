@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Links() {
   return (
@@ -24,7 +24,7 @@ function Links() {
               <Link to="/signup" className="nav-link btn btn-outline-secondary">SignUp</Link>
             </li>
             <li className="nav-item">
-              <li><Link to="/login" className="nav-link btn btn-outline-secondary">Login</Link></li>
+              <Link to="/login" className="nav-link btn btn-outline-secondary">Login</Link>
             </li>
           </ul>
         </div>

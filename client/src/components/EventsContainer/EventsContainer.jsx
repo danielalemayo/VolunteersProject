@@ -1,8 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import './eventsContainer.css';
+import styled from 'styled-components';
+
+const Button = styled.button`
+    display: inline;
+    background: #36799e;
+    color: white;
+    height: 2rem;
+    width: 5rem;
+    margin-right: 0; 
+`;
 
 function EventsContainer() {
   const [volunteeringEvents, setEvents] = useState([]);
+
+  const registerVolunteerToEvent = () => {
+  };
+
+  const DateRender = (eventDate) => {
+    const newDate = new Date(eventDate);
+
+    const options = { month: 'long', day: 'numeric', weekday: 'long', hour: 'numeric', minute: 'numeric' };
+    const time = newDate.toLocaleDateString('ISR', options);
+
+    return time;
+  };
 
   useEffect(() => {
     function getAllEvents() {
@@ -18,29 +40,30 @@ function EventsContainer() {
   const renderEvents = volunteeringEvents.map((event) => (
     <li key={event.name} className="event">
       <h5>
-        <h6>name:</h6>
+        <span>name:</span>
         {' '}
         {event.name}
       </h5>
       <p>
-        <h6>city:</h6>
+        <span>city:</span>
         {' '}
         {event.city}
         <br />
-        <h6>description:</h6>
+        <span>description:</span>
         {' '}
         {event.description}
         <br />
-        <h6>eventDate:</h6>
+        <span>eventDate:</span>
         {' '}
-        {event.eventDate}
+        {DateRender(event.eventDate)}
       </p>
-      <button className="button" type="submit">השתתף</button>
+      <Button type="submit" onClick={registerVolunteerToEvent}>השתתף</Button>
     </li>
   ));
 
   return (
     <ul className="Container">
+      <h3>All The Events</h3>
       {renderEvents}
     </ul>
   );

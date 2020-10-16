@@ -1,22 +1,9 @@
-import React, { useState } from 'react';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import React from 'react';
+import './eventsCalander.css';
 
 function EventsCalendar() {
-  const [date, setDate] = useState(new Date());
 
-  const onChange = () => {
-    setDate(date);
-  };
-
-  return (
-    <div>
-      <Calendar
-        calendarType="Hebrew"
-        onChange={onChange}
-        value={date}
-      />
-    </div>
-  );
+  return <div>Calendar</div>;
 }
+
 export default EventsCalendar;

@@ -7,9 +7,9 @@ import './eventForm.css';
 import urlBase from '../../utils/utils';
 import 'react-datepicker/dist/react-datepicker.css';
 
-function EventForm(props) {
+function EventForm() {
   const history = useHistory();
-  const user = props.user;
+  // const user = props.user;
   const categories = ['Teaching', 'Help Homles', 'Driving lesons'];
   const [startDate, setStartDate] = useState(new Date());
 
@@ -26,13 +26,13 @@ function EventForm(props) {
           name: data.name,
           city: data.city,
           category: data.category,
-          eventDate: startDate,
+          eventDate: startDate.getHours(),
           description: data.description
         })
       });
 
       console.log(respond.json());
-      // history.push('/myFeed');
+      history.push('/myFeed');
     } catch (error) {
       console.error(error);
     }
@@ -66,10 +66,9 @@ function EventForm(props) {
               </div>
               <div className="item">
                 <h6 htmlFor="name"> Date</h6>
-                {/* <input type="text" name="dateTime" ref={register}> */}
                 <DatePicker
-                  ref={register}
-                  innerRef={register}
+                  // ref={register}
+                  // innerRef={register}
                   name="dateTime"
                   className="my-form-control"
                   selected={startDate}

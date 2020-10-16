@@ -1,0 +1,12 @@
+.ContainerRegister {
+    border-left: burlywood solid 3px;
+    border-right: burlywood solid 3px;
+    width: 25rem;
+    min-width: 200px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 300px;
+    overflow: auto;
+}
