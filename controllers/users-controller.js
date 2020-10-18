@@ -1,3 +1,4 @@
+const { NextWeekOutlined } = require('@material-ui/icons');
 const User = require('../models/users-model');
 
 exports.getAllUsers = async (req, res) => {
@@ -137,15 +138,14 @@ exports.singUp = async (req, res) => {
 };
 
 exports.login = async (req, res, next) => {
-// 1) destructuring req.body from client
+  // 1) destructuring req.body from client
   const { email, password } = req.body;
 
   let existingUser;
 
   try {
     // 2) check in DB if obj is exists
-    console.log(' server inside try function (2)');
-    existingUser = await User.findOne({ email: email });
+    existingUser = await User.findOne({ email });
   } catch (err) {
     const error = new Error(
       'Login in failed, please try again later.',
@@ -164,7 +164,6 @@ exports.login = async (req, res, next) => {
     );
     return next(error);
   }
-  console.log(' server after if statment (5)');
 
   return res.status(200).json({ existingUser });
 };

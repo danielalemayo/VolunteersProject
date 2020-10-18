@@ -15,12 +15,16 @@ function EventsContainer() {
   const [volunteeringEvents, setEvents] = useState([]);
 
   const registerVolunteerToEvent = () => {
+    // console.log(props.);
+    console.log(localStorage.getItem('user'));
   };
 
   const DateRender = (eventDate) => {
     const newDate = new Date(eventDate);
 
-    const options = { month: 'long', day: 'numeric', weekday: 'long', hour: 'numeric', minute: 'numeric' };
+    const options = {
+      month: 'long', day: 'numeric', weekday: 'long', hour: 'numeric', minute: 'numeric'
+    };
     const time = newDate.toLocaleDateString('ISR', options);
 
     return time;

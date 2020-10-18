@@ -10,10 +10,10 @@ import 'react-datepicker/dist/react-datepicker.css';
 function EventForm() {
   const history = useHistory();
   // const user = props.user;
-  const categories = ['Teaching', 'Help Homles', 'Driving lesons'];
+  const categories = ['Teaching', 'Help Homles', 'Driving lesons', 'Autistics kids', 'Mada', 'other'];
   const [startDate, setStartDate] = useState(new Date());
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = async (data) => {
     try {
@@ -26,13 +26,13 @@ function EventForm() {
           name: data.name,
           city: data.city,
           category: data.category,
-          eventDate: startDate.getHours(),
+          eventDate: startDate,
           description: data.description
         })
       });
-
-      console.log(respond.json());
-      history.push('/myFeed');
+      const resData = respond.json();
+      // console.log(resData);
+      // history.push('/myFeed');
     } catch (error) {
       console.error(error);
     }
@@ -47,44 +47,55 @@ function EventForm() {
             <div>
               <div className="item">
                 <h6 htmlFor="name"> General name</h6>
-                <input type="text" placeholder="Name What you Need in generaly" name="name" ref={register} />
+                <input className="textArea" type="text" placeholder="Name What you Need in generaly" name="name" ref={register({ required: true })} />
+                {/* {!errors.name && (<span className="error"> Fill the Name ! </span>)} */}
               </div>
               <div>
                 <div className="item">
                   <h6>City</h6>
-                  <input type="text" placeholder="Witch city you need" name="city" ref={register} />
+                  <input className="textArea" type="text" placeholder="Witch city you need" name="city" ref={register({ required: true })} />
+                  {/* {!errors.city && (<span className="error" style={{ color: 'red' }}> Fill the city ! </span>)} */}
                 </div>
                 <div className="item">
-
                   <h6>Category</h6>
-                  <select className="item" name="category" ref={register}>
-                    {categories.map((item) => {
-                      return (<option ref={register} value={item}>{item}</option>);
-                    })}
+                  <select className="textArea" name="category" ref={register({ required: true })}>
+                    {categories.map((item) => (
+                      <option
+                        name={item}
+                        key={item}
+                        value={item}
+                        // ref={register({ required: true })}
+                      >
+                        {item}
+                      </option>
+                    ))}
                   </select>
+                  {/* {!errors.category && (<span className="error" style={{ color: 'red' }}> Fill the Category ! </span>)} */}
                 </div>
               </div>
               <div className="item">
                 <h6 htmlFor="name"> Date</h6>
                 <DatePicker
-                  // ref={register}
-                  // innerRef={register}
+                  ref={register({ required: true })}
                   name="dateTime"
-                  className="my-form-control"
+                  className="my-form-control textArea"
                   selected={startDate}
-                  onChange={(date) => setStartDate(date)}
+                  onChange={(date) => (setStartDate(date))}
                   showTimeSelect
                   timeFormat="HH:mm"
                   timeIntervals={15}
                   timeCaption="time"
                   dateFormat="MM-dd-yyyy h:mm"
                 />
-                {/* </input> */}
+                {/* {!errors.category && (<span className="error"
+                 style={{ color: 'red' }}> Fill the Date ! </span>)} */}
               </div>
               <div className="item">
                 <h6>Description</h6>
-                <textarea className="descrition-input" type="text" placeholder="Total volunteer description/ nots " name="description" ref={register} />
-                {/* <input className="descrition-input" type="text" placeholder="Total volunteer description/ nots " name="description" ref={register} /> */}
+                <textarea type="text" placeholder="Total volunteer description/ nots " name="description" ref={register} />
+                {/* {errors.description.length() < 20 && (
+                  <div className="error" > more description needed </div>
+                )} */}
               </div>
               <button className="submit" type="submit" value="Submit">Go</button>
             </div>
