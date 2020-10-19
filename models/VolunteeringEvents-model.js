@@ -1,3 +1,4 @@
+const { List } = require('@material-ui/core');
 const mongoose = require('mongoose');
 
 const EventsSchema = new mongoose.Schema({
@@ -20,6 +21,9 @@ const EventsSchema = new mongoose.Schema({
   eventDate: {
     type: Date,
     required: true,
+  },
+  registerVolunters: {
+    type: Array,
   },
   date: {
     type: Date,

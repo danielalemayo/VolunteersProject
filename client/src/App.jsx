@@ -10,7 +10,7 @@ import Login from './pages/login';
 import GetUser from './components/GetUsers';
 import LandingPage from './pages/landingpage/LandingPage'
 
-import Myfeed from './pages/Myfeed/Myfeed';
+import MyFeed from './pages/Myfeed/Myfeed';
 
 import EventForm from './pages/eventForm/eventForm';
 
@@ -21,22 +21,16 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Switch>
+        <Route path="/" exact component={LandingPage} />
         <Route path="/getUsers" exact component={GetUser} />
         <Route path="/login" exact component={Login} />
         <Route path="/signUp" exact component={SignUp} />
         <Route path="/home" exact component={LandingPage} />
-        <Route path="/" exact component={LandingPage} />
-        <Route path="/myFeed" exact component={Myfeed} />
-        {/*<Route path="/createEvent" exact component={} /> */}
         <Route path="/myFeed" exact component={MyFeed} />
         <Route path="/eventForm" exact component={EventForm} />
         <Route path="*"><Redirect to="/" /></Route>
       </Switch>
-
-
     </BrowserRouter>
-
-    
   );
 }
 

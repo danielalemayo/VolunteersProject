@@ -1,15 +1,18 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory, Redirect } from 'react-router-dom';
+import urlBase from '../utils/utils';
 
 import './signupcs.css';
 
 function Login() {
   const history = useHistory();
   const { register, handleSubmit } = useForm();
+  let isLogin = null;
+
   const onSubmit = async (data) => {
     try {
-      const response = await fetch('http://localhost:3001/api/users/login', {
+      const response = await fetch(`${urlBase}/api/users/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -21,12 +24,13 @@ function Login() {
       });
       const newData = await response.json();
       if (!newData.existingUser) {
+        isLogin = false;
         return (<Redirect to={{ pathname: 'login' }} />
         );
       }
       if (newData.existingUser) {
-        // localStorage.setItem('user', newData.existingUser);
-        history.push('/myFeed', { user: newData.existingUser });
+        isLogin = true;
+        history.push('/myFeed');
       }
     } catch (error) {
       console.error(error);
@@ -48,6 +52,7 @@ function Login() {
                 <span>Password</span>
                 <input type="password" name="password" ref={register} />
               </div>
+              {isLogin === false && (<span style={{ color: 'red' }}>Your Email Or passWord is not</span>)}
             </div>
             <button className="submit" type="submit">submit</button>
             <a href="signup" className="forgot-pass">SignUp</a>
