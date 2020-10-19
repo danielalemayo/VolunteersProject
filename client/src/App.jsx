@@ -7,11 +7,7 @@ import NavBar from './components/Navbar/Navbar';
 import SignUp from './pages/signUp';
 import Login from './pages/login';
 import GetUser from './components/GetUsers';
-
-import MyFeed from './pages/Myfeed/Myfeed';
-import logo from './img/LightBackLogo.png';
-import CarouselPhotos from './pages/CarouselPhotos.js'
-
+import LandingPage from './pages/landingpage/LandingPage'
 
 
 
@@ -31,7 +27,8 @@ function App() {
         <Route path="/getUsers" exact component={GetUser} />
         <Route path="/login" exact component={Login} />
         <Route path="/signUp" exact component={SignUp} />
-        
+        <Route path="/home" exact component={LandingPage} />
+        <Route path="/" exact component={LandingPage} />
 
         <Route path="/myFeed" exact component={Myfeed} />
         {/* <Route path="/eventForm" exact component={EventForm} /> */}
@@ -39,28 +36,11 @@ function App() {
         <Route path="*"><Redirect to="/" /></Route>
 
       </Switch>
-    
-     <div className = 'rpg'> 
-      <CarouselPhotos />
-     
-     </div>
-
-     <div className = "LogoAndButton" >
-    
-     <button className="Button" >Get Started</button>
-     
-     <img className="Logo" src={logo} alt="logo" />
-
-     </div>
-       
-  
-
-   
-     
-      
 
 
     </BrowserRouter>
+
+    
   );
 }
 
