@@ -40,22 +40,23 @@ width: 9rem;
 height: 10rem;
 `;
 
-function MyFeed() {
+function MyFeed(props) {
+  // console.log(props.location.state.user.email);
   return (
     <div className="Page">
       <div className="section1">
         <ImgPic src={ProfilePic} />
         <h2 className="MyFeedHeder">
-          ברוך הבא
+          Wallcome Daniel
         </h2>
         <div className="Buttons">
-          <Button className="Button" as={Link} to="/createVolunteer">בוא תן יד</Button>
-          <Button className="Button" as={Link} to="/eventForm">? צריך מתנדבים</Button>
+          <Button className="Button" as={Link} to="/createVolunteer">Giv a Hand</Button>
+          <Button className="Button" as={Link} to="/eventForm">Need volunteers ?</Button>
         </div>
       </div>
       <div className="section2">
         <EventsCalendar />
-        <EventsContainer  />
+        <EventsContainer />
       </div>
     </div>
   );

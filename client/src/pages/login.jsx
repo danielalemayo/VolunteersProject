@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Redirect } from 'react-router-dom';
 
 import './signupcs.css';
 
@@ -20,8 +20,13 @@ function Login() {
         })
       });
       const newData = await response.json();
-      if (newData) {
-        history.push('/myFeed', { state: newData.existingUser });
+      if (!newData.existingUser) {
+        return (<Redirect to={{ pathname: 'login' }} />
+        );
+      }
+      if (newData.existingUser) {
+        // localStorage.setItem('user', newData.existingUser);
+        history.push('/myFeed', { user: newData.existingUser });
       }
     } catch (error) {
       console.error(error);
