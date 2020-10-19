@@ -1,5 +1,3 @@
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import './eventsContainer.css';
 import styled from 'styled-components';
@@ -16,19 +14,24 @@ const Button = styled.button`
 
 function EventsContainer(props) {
   const [volunteeringEvents, setEvents] = useState([]);
+  const [regVolToEvent, setVolListToEvent] = useState([]);
 
-  const registerVolunteerToEvent = async (event) => {
-    const response = await fetch(`${urlBase}/myFeed/:${event._id}`, {
-      method: 'PATCh',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        name: props.user.name,
-        email: props.user.email
-      })
-    });
-    console.log(response);
+  const registerVolunteerToEvent = async ({ event }) => {
+    setVolListToEvent(event.registerVolunters);
+    console.log(regVolToEvent);
+
+    // event.registerVolunters.push({ name: 'david', email: 'cdsdcd' });
+    // const response = await fetch(`${urlBase()}/myFeed/:${chosenEvent._id}`, {
+    //   method: 'patch',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify({
+    //     name: props.user.name,
+    //     email: props.user.email
+    //   })
+    // });
+    // console.log('This is response', response);
     // const dataRes = await response.json();
   };
 
@@ -45,7 +48,7 @@ function EventsContainer(props) {
 
   useEffect(() => {
     function getAllEvents() {
-      fetch('http://localhost:3001/api/myFeed')
+      fetch(`${urlBase()}/api/myFeed`)
         .then((response) => response.json())
         .then((volunteerEvents) => {
           setEvents(volunteerEvents.data);
@@ -57,9 +60,8 @@ function EventsContainer(props) {
   const renderEvents = volunteeringEvents.map((event) => (
     <li key={event.name} className="event">
       <h5>
-        <span className="eventSpan">Name:</span>
+        <span className="eventSpan">Name: </span>
         {' '}
-        {console.log(event)}
         {event.name}
       </h5>
       <p>
@@ -75,7 +77,7 @@ function EventsContainer(props) {
         {' '}
         {DateRender(event.eventDate)}
       </p>
-      <Button type="submit" onClick={registerVolunteerToEvent(event)}>השתתף</Button>
+      <Button myEvent={event} type="submit" onSubmit={registerVolunteerToEvent}>השתתף</Button>
     </li>
   ));
 

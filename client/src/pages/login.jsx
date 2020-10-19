@@ -8,12 +8,11 @@ import './signupcs.css';
 function Login() {
   const history = useHistory();
   const { register, handleSubmit } = useForm();
-  let isLogin = null;
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch(`${urlBase}/api/users/login`, {
-        method: 'POST',
+      const response = await fetch(`${urlBase()}/api/users/login`, {
+        method: 'post',
         headers: {
           'Content-Type': 'application/json'
         },
@@ -23,13 +22,11 @@ function Login() {
         })
       });
       const newData = await response.json();
-      if (!newData.existingUser) {
-        isLogin = false;
-        return (<Redirect to={{ pathname: 'login' }} />
+      if (!newData) {
+        return (<Redirect to={{ pathname: '/login' }} />
         );
       }
-      if (newData.existingUser) {
-        isLogin = true;
+      if (newData) {
         history.push('/myFeed');
       }
     } catch (error) {
@@ -52,7 +49,6 @@ function Login() {
                 <span>Password</span>
                 <input type="password" name="password" ref={register} />
               </div>
-              {isLogin === false && (<span style={{ color: 'red' }}>Your Email Or passWord is not</span>)}
             </div>
             <button className="submit" type="submit">submit</button>
             <a href="signup" className="forgot-pass">SignUp</a>

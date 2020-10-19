@@ -1,4 +1,3 @@
-const { List } = require('@material-ui/core');
 const mongoose = require('mongoose');
 
 const EventsSchema = new mongoose.Schema({

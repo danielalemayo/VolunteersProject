@@ -41,11 +41,12 @@ height: 10rem;
 `;
 
 function MyFeed(props) {
-  // const user = { name: localStorage.getItem('userName'), email: localStorage.getItem('userEmail') };
+  // const user = { name: localStorage.getItem('userName'),
+  // email: localStorage.getItem('userEmail') };
   const user = {
     name: 'Daniel Alemayo',
     email: 'danielalemayo0@gmail.com'
-  }
+  };
   return (
     <div className="Page">
       <div className="section1">
@@ -56,8 +57,8 @@ function MyFeed(props) {
           {user.name}
         </h2>
         <div className="Buttons">
-          <Button className="Button" as={Link} to="/createVolunteer">Giv a Hand</Button>
-          <Button className="Button" as={Link} to="/eventForm">Need volunteers ?</Button>
+          <Button className="volunteerButton" as={Link} to="/createVolunteer">Giv a Hand</Button>
+          <Button className="volunteerButton" as={Link} to="/eventForm">Need volunteers ?</Button>
         </div>
       </div>
       <div className="section2">
