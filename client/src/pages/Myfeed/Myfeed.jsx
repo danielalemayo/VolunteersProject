@@ -41,12 +41,7 @@ height: 10rem;
 `;
 
 function MyFeed(props) {
-  // const user = { name: localStorage.getItem('userName'),
-  // email: localStorage.getItem('userEmail') };
-  const user = {
-    name: 'Daniel Alemayo',
-    email: 'danielalemayo0@gmail.com'
-  };
+  const user = { name: 'Daniel Alemayo', email: 'danielalemayo0@gmail.com' };
   return (
     <div className="Page">
       <div className="section1">

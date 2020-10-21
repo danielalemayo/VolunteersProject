@@ -1,38 +1,41 @@
+/* eslint-disable no-console */
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import './eventsContainer.css';
 import styled from 'styled-components';
 import urlBase from '../../utils/utils';
+import apis from '../../api/myFeedRequests';
 
 const Button = styled.button`
     display: inline;
-    background: #36799e;
+    background: #3aa1a1;
     color: white;
     height: 2rem;
     width: 5rem;
     margin-right: 0; 
+    border-radius: 8%;
 `;
 
 function EventsContainer(props) {
   const [volunteeringEvents, setEvents] = useState([]);
-  const [regVolToEvent, setVolListToEvent] = useState([]);
+  const storageUser = localStorage.getItem('shlomi');
+  const [user, setUser] = useState(JSON.parse(storageUser));
 
-  const registerVolunteerToEvent = async ({ event }) => {
-    setVolListToEvent(event.registerVolunters);
-    console.log(regVolToEvent);
-
-    // event.registerVolunters.push({ name: 'david', email: 'cdsdcd' });
-    // const response = await fetch(`${urlBase()}/myFeed/:${chosenEvent._id}`, {
-    //   method: 'patch',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify({
-    //     name: props.user.name,
-    //     email: props.user.email
-    //   })
-    // });
-    // console.log('This is response', response);
-    // const dataRes = await response.json();
+  const registerVolunteerToEvent = async (event) => {
+    try {
+      await fetch(`${urlBase()}/api/myFeed/${event._id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          volunteerId: user.id
+        })
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const DateRender = (eventDate) => {
@@ -45,15 +48,14 @@ function EventsContainer(props) {
 
     return time;
   };
-
+  const getAllEvents = () => {
+    fetch(`${urlBase()}/api/myFeed`)
+      .then((response) => response.json())
+      .then((volunteerEvents) => {
+        setEvents(volunteerEvents.data);
+      }).catch((err) => console.error(err));
+  };
   useEffect(() => {
-    function getAllEvents() {
-      fetch(`${urlBase()}/api/myFeed`)
-        .then((response) => response.json())
-        .then((volunteerEvents) => {
-          setEvents(volunteerEvents.data);
-        });
-    }
     getAllEvents();
   }, []);
 
@@ -77,7 +79,7 @@ function EventsContainer(props) {
         {' '}
         {DateRender(event.eventDate)}
       </p>
-      <Button myEvent={event} type="submit" onSubmit={registerVolunteerToEvent}>השתתף</Button>
+      <Button type="button" onClick={() => registerVolunteerToEvent(event)}>participate</Button>
     </li>
   ));
 

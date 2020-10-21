@@ -1,3 +1,5 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-console */
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory, Redirect } from 'react-router-dom';
@@ -27,13 +29,14 @@ function Login() {
         );
       }
       if (newData) {
+        console.log(newData.existingUser);
+        localStorage.setItem('user', JSON.stringify({ id: newData.existingUser._id, name: newData.existingUser.name, email: newData.existingUser.email }));
         history.push('/myFeed');
       }
     } catch (error) {
       console.error(error);
     }
   };
-
   return (
     <div className="Page">
       <form className="bodyLog" onSubmit={handleSubmit(onSubmit)} method="POST">

@@ -1,13 +1,14 @@
-const APIURL = "http://localhost:3001/api";
+import urlBase from '../utils/utils';
+
+const APIURL = urlBase();
 
 export const getUsers = async () => {
-  const res = await fetch(`${APIURL}/users`);
-
+  const res = await fetch(`${APIURL}/api/users`);
   return res.json();
 };
 
 export const addUser = async data => {
-  const response = await fetch(`${APIURL}/users`, {
+  const response = await fetch(`${APIURL}/api/users`, {
     method: "POST",
     mode: "cors",
     cache: "no-cache",
@@ -21,7 +22,7 @@ export const addUser = async data => {
 };
 
 export const editUser = async data => {
-  const response = await fetch(`${APIURL}/users/${data.id}`, {
+  const response = await fetch(`${APIURL}/api/users/${data.id}`, {
     method: "PUT",
     mode: "cors",
     cache: "no-cache",
@@ -35,40 +36,35 @@ export const editUser = async data => {
 };
 
 export const getUser = async data => {
-    const response = await fetch(`${APIURL}/users/${data.id}`, {
-      method: "POST",
-      mode: "cors",
-      cache: "no-cache",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data)
-    });
-  
-    return response.json();
-  };
+  const response = await fetch(`${APIURL}/api/users/${data.id}`, {
+    method: "POST",
+    mode: "cors",
+    cache: "no-cache",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  });
+
+  return response.json();
+};
 
 export const deleteUser = async id => {
-  const response = fetch(`${APIURL}/users/${id}`, {
+  const response = fetch(`${APIURL}/api/users/${id}`, {
     method: "DELETE",
     mode: "cors",
     cache: "no-cache"
   });
 
   return response;
-}
+};
 
 const apis = {
-    getUsers,
-    getUser,
-    addUser,
-    editUser,
-    deleteUser,
-}
+  getUsers,
+  getUser,
+  addUser,
+  editUser,
+  deleteUser
+};
 
 export default apis;
-
-
-
-
-
