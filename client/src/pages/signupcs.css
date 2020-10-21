@@ -12,11 +12,11 @@
     align-items: center;
     background:-webkit-linear-gradient(left,#7579ff,#b224ef)
 }
-input,button{
+/* input,button{
     border: none;
     outline: none;
     background: none;
-}
+} */
 .cont{
     overflow: hidden;
     position: relative;

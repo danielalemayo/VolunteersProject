@@ -1,4 +1,5 @@
- /* .Page1 {
+ .Page1 {
+ .Page1 {
   display: flex;
   justify-content: center;
   align-content: center;
@@ -11,5 +12,5 @@ body {
 
 *{
   font-family: cursive;
-} */
+}
 

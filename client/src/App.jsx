@@ -14,6 +14,7 @@ import MyFeed from './pages/Myfeed/Myfeed';
 
 import EventForm from './pages/eventForm/eventForm';
 
+
 import './App.css';
 
 function App() {
@@ -26,10 +27,15 @@ function App() {
         <Route path="/login" exact component={Login} />
         <Route path="/signUp" exact component={SignUp} />
         <Route path="/home" exact component={LandingPage} />
+        <Route path="/" exact component={LandingPage} />
+        <Route path="/myFeed" exact component={MyFeed} />
+        {/*<Route path="/createEvent" exact component={} /> */}
         <Route path="/myFeed" exact component={MyFeed} />
         <Route path="/eventForm" exact component={EventForm} />
         <Route path="*"><Redirect to="/" /></Route>
       </Switch>
+
+     
     </BrowserRouter>
   );
 }
