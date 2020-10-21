@@ -1,9 +1,7 @@
 import React from 'react';
-
-// import { Redirect } from 'react-router-dom';
-
 import logo from '../../img/LightBackLogo.png';
 import CarouselPhotos from './CarouselPhotos'
+import ShowEvents from './ShowEvents'
 import './LandingPage.css'
 
 export default function App() {
@@ -14,12 +12,13 @@ export default function App() {
       <CarouselPhotos />
      
      </div>
+     <ShowEvents />
 
      <div className = "LogoAndButton" >
-    
-     <button className="Button" >Get Started</button>
-     
+   
      <img className="Logo" src={logo} alt="logo" />
+
+     <button className="getstarted" >Get Started</button>
 
      </div>
      </div>
