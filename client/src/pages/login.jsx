@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory, Redirect } from 'react-router-dom';
 import urlBase from '../utils/utils';
@@ -6,9 +6,13 @@ import urlBase from '../utils/utils';
 import './signupcs.css';
 
 function Login() {
+  const [user, setUser] = useState({});
   const history = useHistory();
   const { register, handleSubmit } = useForm();
+  useEffect(() => {
 
+    }, []);
+ 
   const onSubmit = async (data) => {
     try {
       const response = await fetch(`${urlBase()}/api/users/login`, {
@@ -27,6 +31,9 @@ function Login() {
         );
       }
       if (newData) {
+        const user = newData.existingUser;
+        localStorage.setItem("user", JSON.stringify(user));
+        setUser(user);
         history.push('/myFeed');
       }
     } catch (error) {
