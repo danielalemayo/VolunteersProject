@@ -16,7 +16,7 @@ exports.getAllEvents = async (req, res) => {
     });
   }
 };
-exports.createEvents = async (req, res) => {
+exports.createEvent = async (req, res) => {
   try {
     const newEvent = await EventsSchema.create(req.body);
     res.status(200).json({
@@ -32,7 +32,8 @@ exports.createEvents = async (req, res) => {
     });
   }
 };
-exports.updateEvents = async (req, res) => {
+exports.updateEvent = async (req, res) => {
+  // console.log('sucseed')
   try {
     const updateEvent = await EventsSchema.findByIdAndUpdate(req.params.id, req.body, {
       new: true,

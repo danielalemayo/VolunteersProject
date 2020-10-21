@@ -6,10 +6,10 @@ const router = express.Router();
 /* GET users listing. */
 router.route('/')
   .get(eventCtrl.getAllEvents)
-  .post(eventCtrl.createEvents);
+  .post(eventCtrl.createEvent);
 
 router.route('/:id')
-  .patch(eventCtrl.updateEvents)
+  .patch(eventCtrl.updateEvent)
   .get(eventCtrl.getEvent)
   .delete(eventCtrl.deleteEvent);
 

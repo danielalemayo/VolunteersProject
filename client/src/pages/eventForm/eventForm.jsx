@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-// import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './eventForm.css';
@@ -9,8 +9,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 function EventForm() {
   const formDate = new Date();
-  // const history = useHistory();
-  // const user = props.user;
+  const history = useHistory();
   const categories = ['Select', 'Teaching', 'Help Homles', 'Driving lesons', 'Autistics kids', 'Mada', 'other'];
   const [startDate, setStartDate] = useState(new Date());
 
@@ -33,7 +32,7 @@ function EventForm() {
       });
       const resData = respond.json();
       console.log(resData);
-      // history.push('/myFeed');
+      history.push('/myFeed');
     } catch (error) {
       console.error(error);
     }

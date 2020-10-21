@@ -41,22 +41,29 @@ height: 10rem;
 `;
 
 function MyFeed(props) {
-  // console.log(props.location.state.user.email);
+  // const user = { name: localStorage.getItem('userName'),
+  // email: localStorage.getItem('userEmail') };
+  const user = {
+    name: 'Daniel Alemayo',
+    email: 'danielalemayo0@gmail.com'
+  };
   return (
     <div className="Page">
       <div className="section1">
         <ImgPic src={ProfilePic} />
         <h2 className="MyFeedHeder">
-          Wallcome Daniel
+          Wallcome
+          {' '}
+          {user.name}
         </h2>
         <div className="Buttons">
-          <Button className="Button" as={Link} to="/createVolunteer">Giv a Hand</Button>
-          <Button className="Button" as={Link} to="/eventForm">Need volunteers ?</Button>
+          <Button className="volunteerButton" as={Link} to="/createVolunteer">Giv a Hand</Button>
+          <Button className="volunteerButton" as={Link} to="/eventForm">Need volunteers ?</Button>
         </div>
       </div>
       <div className="section2">
         <EventsCalendar />
-        <EventsContainer />
+        <EventsContainer user={user} />
       </div>
     </div>
   );

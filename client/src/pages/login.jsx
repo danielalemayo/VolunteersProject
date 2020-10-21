@@ -1,16 +1,18 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory, Redirect } from 'react-router-dom';
+import urlBase from '../utils/utils';
 
 import './signupcs.css';
 
 function Login() {
   const history = useHistory();
   const { register, handleSubmit } = useForm();
+
   const onSubmit = async (data) => {
     try {
-      const response = await fetch('http://localhost:3001/api/users/login', {
-        method: 'POST',
+      const response = await fetch(`${urlBase()}/api/users/login`, {
+        method: 'post',
         headers: {
           'Content-Type': 'application/json'
         },
@@ -20,13 +22,12 @@ function Login() {
         })
       });
       const newData = await response.json();
-      if (!newData.existingUser) {
-        return (<Redirect to={{ pathname: 'login' }} />
+      if (!newData) {
+        return (<Redirect to={{ pathname: '/login' }} />
         );
       }
-      if (newData.existingUser) {
-        // localStorage.setItem('user', newData.existingUser);
-        history.push('/myFeed', { user: newData.existingUser });
+      if (newData) {
+        history.push('/myFeed');
       }
     } catch (error) {
       console.error(error);

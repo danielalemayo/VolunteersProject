@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './eventsContainer.css';
 import styled from 'styled-components';
+import urlBase from '../../utils/utils';
 
 const Button = styled.button`
     display: inline;
@@ -11,12 +12,27 @@ const Button = styled.button`
     margin-right: 0; 
 `;
 
-function EventsContainer() {
+function EventsContainer(props) {
   const [volunteeringEvents, setEvents] = useState([]);
+  const [regVolToEvent, setVolListToEvent] = useState([]);
 
-  const registerVolunteerToEvent = () => {
-    // console.log(props.);
-    console.log(localStorage.getItem('user'));
+  const registerVolunteerToEvent = async ({ event }) => {
+    setVolListToEvent(event.registerVolunters);
+    console.log(regVolToEvent);
+
+    // event.registerVolunters.push({ name: 'david', email: 'cdsdcd' });
+    // const response = await fetch(`${urlBase()}/myFeed/:${chosenEvent._id}`, {
+    //   method: 'patch',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify({
+    //     name: props.user.name,
+    //     email: props.user.email
+    //   })
+    // });
+    // console.log('This is response', response);
+    // const dataRes = await response.json();
   };
 
   const DateRender = (eventDate) => {
@@ -32,10 +48,10 @@ function EventsContainer() {
 
   useEffect(() => {
     function getAllEvents() {
-      fetch('http://localhost:3001/api/myFeed')
+      fetch(`${urlBase()}/api/myFeed`)
         .then((response) => response.json())
-        .then((volunteeringEvents) => {
-          setEvents(volunteeringEvents.data);
+        .then((volunteerEvents) => {
+          setEvents(volunteerEvents.data);
         });
     }
     getAllEvents();
@@ -44,7 +60,7 @@ function EventsContainer() {
   const renderEvents = volunteeringEvents.map((event) => (
     <li key={event.name} className="event">
       <h5>
-        <span className="eventSpan">Name:</span>
+        <span className="eventSpan">Name: </span>
         {' '}
         {event.name}
       </h5>
@@ -61,7 +77,7 @@ function EventsContainer() {
         {' '}
         {DateRender(event.eventDate)}
       </p>
-      <Button type="submit" onClick={registerVolunteerToEvent}>השתתף</Button>
+      <Button myEvent={event} type="submit" onSubmit={registerVolunteerToEvent}>השתתף</Button>
     </li>
   ));
 

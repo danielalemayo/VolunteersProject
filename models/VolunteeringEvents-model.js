@@ -21,6 +21,9 @@ const EventsSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
+  registerVolunters: {
+    type: Array,
+  },
   date: {
     type: Date,
     default: Date.now,
