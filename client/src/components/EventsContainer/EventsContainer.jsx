@@ -5,22 +5,23 @@ import React, { useState, useEffect } from 'react';
 import './eventsContainer.css';
 import styled from 'styled-components';
 import urlBase from '../../utils/utils';
-import apis from '../../api/myFeedRequests';
+// import apis from '../../api/myFeedRequests';
 
 const Button = styled.button`
-    display: inline;
-    background: #3aa1a1;
-    color: white;
-    height: 2rem;
-    width: 5rem;
-    margin-right: 0; 
-    border-radius: 8%;
+  display: inline;
+  background: #3aa1a1;
+  color: white;
+  height: 2rem;
+  width: 5.5rem;
+  margin-right: 0;
+  border-radius: 8%;
+  border-color: #3aa1a1;
 `;
 
 function EventsContainer(props) {
   const [volunteeringEvents, setEvents] = useState([]);
   const storageUser = localStorage.getItem('shlomi');
-  const [user, setUser] = useState(JSON.parse(storageUser));
+  const [user] = useState(JSON.parse(storageUser));
 
   const registerVolunteerToEvent = async (event) => {
     try {
@@ -37,6 +38,11 @@ function EventsContainer(props) {
       console.log(error);
     }
   };
+
+  // const getEventsRegisterByUserId = async () => {
+  //   const res = apis.getEventsByRegisterVolunteer();
+
+  // };
 
   const DateRender = (eventDate) => {
     const newDate = new Date(eventDate);

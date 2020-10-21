@@ -48,7 +48,9 @@ function MyFeed(props) {
       <div className="section1">
         <ImgPic src={ProfilePic} />
         <h2 className="MyFeedHeder">
-        <h1>Hello </h1>
+          Hello
+          {' '}
+          {user.name}
         </h2>
         <div className="Buttons">
           <Button className="volunteerButton" as={Link} to="/createVolunteer">Giv a Hand</Button>
