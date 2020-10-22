@@ -1,7 +1,5 @@
 .landingPage {
-    background-color: darkgray;
 }
-
 .carousel {
     width: 78%;
     height: 50%;
@@ -28,11 +26,4 @@
     color: white;
     border-radius: 5px;
     text-align: center;
-}
-
-.ticker {
-    display: flex;
-    flex-wrap: wrap;
-    width: 80%;
-    margin: 0 auto;
 }

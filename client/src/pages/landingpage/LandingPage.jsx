@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../../img/LightBackLogo.png';
 import CarouselPhotos from './CarouselPhotos'
 import ShowEvents from './ShowEvents'
+// import ShowEvents from '../../components/ShowEvents/ShowEvents'
 import './LandingPage.css'
 
 export default function App() {

@@ -1,4 +1,5 @@
 const express = require('express');
+const eventCtrl = require('../../controllers/ctrlEvents');
 
 const router = express.Router();
 
@@ -6,5 +7,6 @@ const router = express.Router();
 router.get('/', (req, res) => {
   res.render('index', { title: 'Express' });
 });
+
 
 module.exports = router;
