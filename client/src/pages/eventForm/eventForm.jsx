@@ -12,6 +12,8 @@ function EventForm() {
   const history = useHistory();
   const categories = ['Select', 'Teaching', 'Help Homles', 'Driving lesons', 'Autistics kids', 'Mada', 'other'];
   const [startDate, setStartDate] = useState(new Date());
+  const storageUser = localStorage.getItem('user');
+  const user = JSON.parse(storageUser);
 
   const { register, handleSubmit, errors } = useForm();
 
@@ -23,6 +25,7 @@ function EventForm() {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
+          userId: user.id,
           name: data.fullName,
           city: data.city,
           category: data.category,
@@ -49,28 +52,26 @@ function EventForm() {
               <input className="textArea" type="text" placeholder="Name What you Need in generaly" name="fullName" ref={register({ required: true })} />
               {errors.fullName && errors.fullName.type === 'required' && (<span className="error">{console.log(errors.fullName)} The Name is required </span>)}
             </div>
-            <div>
-              <div className="item">
-                <h6>City</h6>
-                <input className="textArea" type="text" placeholder="Witch city you need" name="city" ref={register({ required: true })} />
-                {errors.city && errors.city.type === 'required' && (<span className="error"> Fill the city ! </span>)}
-              </div>
-              <div className="item">
-                <h6>Category</h6>
-                <select className="textArea" name="category" ref={register({ required: true })}>
-                  {categories.map((item) => (
-                    <option
-                      name={item}
-                      key={item}
-                      value={item}
-                    // ref={register({ required: true })}
-                    >
-                      {item}
-                    </option>
-                  ))}
-                </select>
-                {errors.category && errors.category.type === 'required' && (<span className="error" style={{ color: 'red' }}> Fill the Category ! </span>)}
-              </div>
+            <div className="item">
+              <h6>City</h6>
+              <input className="textArea" type="text" placeholder="Witch city you need" name="city" ref={register({ required: true })} />
+              {errors.city && errors.city.type === 'required' && (<span className="error"> Fill the city ! </span>)}
+            </div>
+            <div className="item">
+              <h6>Category</h6>
+              <select className="textArea" name="category" ref={register({ required: true })}>
+                {categories.map((item) => (
+                  <option
+                    name={item}
+                    key={item}
+                    value={item}
+                  // ref={register({ required: true })}
+                  >
+                    {item}
+                  </option>
+                ))}
+              </select>
+              {errors.category && errors.category.type === 'required' && (<span className="error" style={{ color: 'red' }}> Fill the Category ! </span>)}
             </div>
             <div className="item">
               <h6 htmlFor="name"> Date</h6>
@@ -105,7 +106,7 @@ function EventForm() {
           </div>
         </div>
       </div>
-    </form>
+    </form >
   );
 }
 

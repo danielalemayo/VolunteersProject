@@ -23,6 +23,7 @@ const EventsSchema = new mongoose.Schema({
   },
   registerVolunters: {
     type: Array,
+    required: false,
   },
   date: {
     type: Date,

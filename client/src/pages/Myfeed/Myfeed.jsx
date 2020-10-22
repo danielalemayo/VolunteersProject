@@ -41,18 +41,14 @@ height: 10rem;
 `;
 
 function MyFeed(props) {
-  // const user = { name: localStorage.getItem('userName'),
-  // email: localStorage.getItem('userEmail') };
-  const user = {
-    name: 'Daniel Alemayo',
-    email: 'danielalemayo0@gmail.com'
-  };
+  const storageUser = localStorage.getItem('user');
+  const user = JSON.parse(storageUser);
   return (
     <div className="Page">
       <div className="section1">
         <ImgPic src={ProfilePic} />
         <h2 className="MyFeedHeder">
-          Wallcome
+          Hello
           {' '}
           {user.name}
         </h2>

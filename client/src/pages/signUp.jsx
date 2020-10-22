@@ -42,19 +42,19 @@ function SignUp() {
             <div>
               <div className="item">
                 <span>Full Name</span>
-                <input name="fullName" type="text" ref={register} />
+                <input className="input" name="fullName" type="text" ref={register} />
               </div>
               <div className="item">
                 <span>Email Address</span>
-                <input type="email" name="email" ref={register} />
+                <input className="input" type="email" name="email" ref={register} />
               </div>
               <div className="item">
                 <span>Password</span>
-                <input type="password" name="password" ref={register} />
+                <input className="input" type="password" name="password" ref={register} />
               </div>
               <div className="item">
                 <span>Confirm Password</span>
-                <input type="password" name="password" />
+                <input className="input" type="password" name="password" />
               </div>
             </div>
             <button className="submit" type="submit">Add New</button>

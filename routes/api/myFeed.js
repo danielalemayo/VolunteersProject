@@ -9,8 +9,11 @@ router.route('/')
   .post(eventCtrl.createEvent);
 
 router.route('/:id')
-  .patch(eventCtrl.updateEvent)
+  .put(eventCtrl.updateEvent)
   .get(eventCtrl.getEvent)
   .delete(eventCtrl.deleteEvent);
+
+router.route('/registerEvent/:id')
+  .get(eventCtrl.getRegisterEvent);
 
 module.exports = router;
