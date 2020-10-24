@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import './eventsContainer.css';
 import styled from 'styled-components';
 import urlBase from '../../utils/utils';
-import apis from '../../api/myFeedRequests';
+// import apis from '../../api/myFeedRequests';
 
 const Button = styled.button`
     display: inline;
@@ -20,7 +20,7 @@ const Button = styled.button`
 function EventsContainer(props) {
   const [volunteeringEvents, setEvents] = useState([]);
   const storageUser = localStorage.getItem('shlomi');
-  const [user, setUser] = useState(JSON.parse(storageUser));
+  const [user ] = useState(JSON.parse(storageUser));
 
   const registerVolunteerToEvent = async (event) => {
     try {
