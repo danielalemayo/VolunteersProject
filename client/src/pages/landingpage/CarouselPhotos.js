@@ -2,6 +2,7 @@ import React from 'react'
 import FirstSlide from '../../img/volunteers.jpg';
 import SecondSlide from '../../img/brian-yurasits-PzQNdXw2a6g-unsplash.jpg';
 import ThirdSlide from '../../img/VulonteerPic.jpg';
+import FourSlide from   '../../img/jsignup.jpg'
 import Carousel from 'react-bootstrap/Carousel'
 import './LandingPage.css'
 export default function ControlledCarousel() {
@@ -18,7 +19,7 @@ export default function ControlledCarousel() {
           />
           <Carousel.Caption>
             <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <p>אנו מזמינים אתכם להצטרף אלינו ולתת סיוע חירום.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -38,6 +39,23 @@ export default function ControlledCarousel() {
 
             className="d-block w-100"
             src={ThirdSlide}
+            alt="Third slide"
+            width='100px'
+
+
+
+          />
+
+          <Carousel.Caption>
+            <h3>Third slide label</h3>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+
+            className="d-block w-100"
+            src={FourSlide}
             alt="Third slide"
             width='100px'
 

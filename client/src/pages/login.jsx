@@ -1,4 +1,4 @@
-import React,{ useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory, Redirect } from 'react-router-dom';
 import urlBase from '../utils/utils';
@@ -6,13 +6,9 @@ import urlBase from '../utils/utils';
 import './signupcs.css';
 
 function Login() {
-  const [user, setUser] = useState({});
   const history = useHistory();
   const { register, handleSubmit } = useForm();
-  useEffect(() => {
-
-    }, []);
- 
+  const [isLogin, setIsLogin] = useState(true);
   const onSubmit = async (data) => {
     try {
       const response = await fetch(`${urlBase()}/api/users/login`, {
@@ -32,13 +28,13 @@ function Login() {
       }
       if (newData) {
         const user = newData.existingUser;
-        localStorage.setItem("user", JSON.stringify(user));
-        setUser(user);
+        localStorage.setItem('user', JSON.stringify(user));
         history.push('/myFeed');
       }
     } catch (error) {
       console.error(error);
     }
+    setIsLogin(false);
   };
   return (
     <div className="Page">
@@ -49,13 +45,16 @@ function Login() {
             <div>
               <div className="item">
                 <span>Email Address</span>
-                <input type="email" name="email" ref={register} />
+                <input className="input" type="email" name="email" ref={register} />
               </div>
               <div className="item">
                 <span>Password</span>
-                <input type="password" name="password" ref={register} />
+                <input className="input" type="password" name="password" ref={register} />
               </div>
             </div>
+
+            {isLogin ? null : <div className="loginError">Your email or password is not correct</div>}
+
             <button className="submit" type="submit">submit</button>
             <a href="signup" className="forgot-pass">SignUp</a>
           </div>

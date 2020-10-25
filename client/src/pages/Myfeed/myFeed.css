@@ -1,5 +1,7 @@
-body{
+.myFeed-body{
     background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    display: flex;
+    height: 100%;
 }
 .emp-profile{
     padding: 3%;

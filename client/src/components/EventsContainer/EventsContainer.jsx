@@ -4,38 +4,24 @@
 import React, { useState, useEffect } from 'react';
 import './eventsContainer.css';
 import styled from 'styled-components';
-import urlBase from '../../utils/utils';
-// import apis from '../../api/myFeedRequests';
+import apis from '../../api/myFeedRequests';
 
 const Button = styled.button`
-    display: inline;
-    background: #3aa1a1;
-    color: white;
-    height: 2rem;
-    width: 5rem;
-    margin-right: 0; 
-    border-radius: 8%;
+  display: inline;
+  background: #3aa1a1;
+  color: white;
+  height: 2rem;
+  width: 5.5rem;
+  margin-right: 0;
+  border-radius: 8%;
+  border-color: #3aa1a1;
 `;
 
 function EventsContainer(props) {
   const [volunteeringEvents, setEvents] = useState([]);
-  const storageUser = localStorage.getItem('shlomi');
-  const [user ] = useState(JSON.parse(storageUser));
 
-  const registerVolunteerToEvent = async (event) => {
-    try {
-      await fetch(`${urlBase()}/api/myFeed/${event._id}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          volunteerId: user.id
-        })
-      });
-    } catch (error) {
-      console.log(error);
-    }
+  const setVolunteerToEvent = async (eventId, userId) => {
+    apis.registerVolunteerToEvent(eventId, userId);
   };
 
   const DateRender = (eventDate) => {
@@ -48,13 +34,12 @@ function EventsContainer(props) {
 
     return time;
   };
-  const getAllEvents = () => {
-    fetch(`${urlBase()}/api/myFeed`)
-      .then((response) => response.json())
-      .then((volunteerEvents) => {
-        setEvents(volunteerEvents.data);
-      }).catch((err) => console.error(err));
+
+  const getAllEvents = async () => {
+    const volunteerEvents = await apis.getAllEvents();
+    setEvents(volunteerEvents.data);
   };
+
   useEffect(() => {
     getAllEvents();
   }, []);
@@ -79,13 +64,22 @@ function EventsContainer(props) {
         {' '}
         {DateRender(event.eventDate)}
       </p>
-      <Button type="button" onClick={() => registerVolunteerToEvent(event)}>participate</Button>
+      <Button
+        type="button"
+        onClick={() => {
+          setVolunteerToEvent(event._id, props.user._id);
+        }}
+      >
+        participate
+      </Button>
     </li>
   ));
 
   return (
     <ul className="Container">
-      <h3>All The Events</h3>
+      <h3>
+        All The Events
+      </h3>
       {renderEvents}
     </ul>
   );

@@ -16,6 +16,7 @@ exports.getAllEvents = async (req, res) => {
     });
   }
 };
+
 exports.createEvent = async (req, res) => {
   try {
     const newEvent = await EventsSchema.create(req.body);
@@ -32,14 +33,10 @@ exports.createEvent = async (req, res) => {
     });
   }
 };
-exports.updateEvent = async (req, res) => {
-  // console.log('sucseed')
-  try {
-    const updateEvent = await EventsSchema.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true,
-    });
 
+exports.updateEvent = async (req, res) => {
+  try {
+    const updateEvent = await EventsSchema.updateOne({ _id: req.params.id }, { $addToSet: { registerVolunters: [req.body] } }); 
     res.status(200).json({
       status: 'success',
       data: {
@@ -47,12 +44,14 @@ exports.updateEvent = async (req, res) => {
       },
     });
   } catch (error) {
-    res.status(404).json({
+    console.error('Error Update event faild : ', error);
+    res.status(500).json({
       status: 'filed',
       message: error,
     });
   }
 };
+
 exports.getEvent = async (req, res) => {
   try {
     const getEvent = await EventsSchema.findById(req.params.id);
@@ -63,12 +62,13 @@ exports.getEvent = async (req, res) => {
       },
     });
   } catch (error) {
-    res.status(404).json({
+    res.status(500).json({
       status: 'filed',
       message: error,
     });
   }
 };
+
 exports.deleteEvent = async (req, res) => {
   try {
     await EventsSchema.findByIdAndDelete(req.params.id);
@@ -78,7 +78,23 @@ exports.deleteEvent = async (req, res) => {
       data: null,
     });
   } catch (error) {
-    res.status(404).json({
+    res.status(500).json({
+      status: 'filed',
+      message: error,
+    });
+  }
+};
+
+exports.getRegisterEvent = async (req, res) => {
+  try {
+    const ListEvents = await EventsSchema.find({ registerVolunters: { $elemMatch: req.body } });
+    res.status(200).json({
+      status: 'success',
+      results: ListEvents.length,
+      data: ListEvents,
+    });
+  } catch (error) {
+    res.status(500).json({
       status: 'filed',
       message: error,
     });

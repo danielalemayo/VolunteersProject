@@ -23,6 +23,7 @@ const EventsSchema = new mongoose.Schema({
   },
   registerVolunters: {
     type: Array,
+    required: false,
   },
   date: {
     type: Date,
@@ -30,4 +31,4 @@ const EventsSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('volunteer-Events', EventsSchema);
+module.exports = mongoose.model('volunteerevents', EventsSchema);
