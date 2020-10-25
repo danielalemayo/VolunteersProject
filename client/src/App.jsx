@@ -2,12 +2,10 @@ import React from 'react';
 import {
   BrowserRouter, Route, Switch, Redirect
 } from 'react-router-dom';
-
 // Components/ Pages
 import NavBar from './components/Navbar/Navbar';
 import SignUp from './pages/signUp';
 import Login from './pages/login';
-import GetUser from './components/GetUsers';
 import LandingPage from './pages/landingpage/LandingPage'
 
 import MyFeed from './pages/Myfeed/Myfeed';
@@ -23,13 +21,9 @@ function App() {
       <NavBar />
       <Switch>
         <Route path="/" exact component={LandingPage} />
-        <Route path="/getUsers" exact component={GetUser} />
+        <Route path="/home" exact component={LandingPage} />
         <Route path="/login" exact component={Login} />
         <Route path="/signUp" exact component={SignUp} />
-        <Route path="/home" exact component={LandingPage} />
-        <Route path="/" exact component={LandingPage} />
-        <Route path="/myFeed" exact component={MyFeed} />
-        {/*<Route path="/createEvent" exact component={} /> */}
         <Route path="/myFeed" exact component={MyFeed} />
         <Route path="/eventForm" exact component={EventForm} />
         <Route path="*"><Redirect to="/" /></Route>
