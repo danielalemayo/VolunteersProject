@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import EventsContainer from '../../components/EventsContainer/EventsContainer';
 import EventsCalendar from '../../components/eventsCalender/EventsCalendar';
 import ProfilePic from '../../img/sabine-ojeil-8KM_DyWGemw-unsplash.jpg';
+import RegisterList from '../../components/registerVol-EventList/registerList';
 import './myFeed.css';
 
 const Button = styled.a`
@@ -40,9 +41,17 @@ width: 9rem;
 height: 10rem;
 `;
 
-function MyFeed(props) {
-  const storageUser = localStorage.getItem('user');
-  const user = JSON.parse(storageUser);
+function MyFeed() {
+  const [user, setUser] = useState({});
+
+  const getUser = () => {
+    const storageUser = localStorage.getItem('user');
+    const localUser = JSON.parse(storageUser);
+    setUser(localUser);
+  };
+  useEffect(() => {
+    getUser();
+  }, []);
   return (
     <div className="Page">
       <div className="section1">
@@ -59,6 +68,7 @@ function MyFeed(props) {
       </div>
       <div className="section2">
         <EventsCalendar />
+        <RegisterList user={user} />
         <EventsContainer user={user} />
       </div>
     </div>

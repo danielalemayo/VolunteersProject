@@ -36,7 +36,7 @@ exports.createEvent = async (req, res) => {
 
 exports.updateEvent = async (req, res) => {
   try {
-    const updateEvent = await EventsSchema.updateOne({ _id: req.params.id }, { $addToSet: { registerVolunters: [req.body] } });
+    const updateEvent = await EventsSchema.updateOne({ _id: req.params.id }, { $addToSet: { registerVolunters: [req.body] } }); 
     res.status(200).json({
       status: 'success',
       data: {
