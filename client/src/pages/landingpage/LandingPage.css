@@ -1,9 +1,16 @@
 .landingPage {
+    background-color: gray;
 }
+
 .carousel {
-    width: 78%;
+    width: 71%;
     height: 50%;
-    left: 12%;
+    left: 1%;
+}z
+.title {
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .LogoAndButton {

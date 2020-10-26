@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ShowEvents from '../../pages/landingpage/ShowEvents'
 import urlBase from '../../utils/utils';
-
-
 
 
 function EventsContainer() {
@@ -18,9 +15,10 @@ function EventsContainer() {
         getAllEvents();
     }, []);
 
-
     const renderEvents = volunteeringEvents.map((event) => (
-        <li key={event.name} className="list-group-item">
+
+
+        <li key={event.name} className="list-group-item" >
             <p>
                 <span className="eventSpan"></span>
                 {' '}
@@ -30,8 +28,7 @@ function EventsContainer() {
     ));
 
     return (
-        <ul className="list-group">
-            {/* <ShowEvents /> */}
+        <ul className="list-group" >
             {renderEvents}
         </ul>
     );

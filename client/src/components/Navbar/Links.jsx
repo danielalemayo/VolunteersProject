@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function Links() {
@@ -7,7 +7,10 @@ function Links() {
   const logout = () => {
     localStorage.removeItem('user');
     setUser(null);
-  }
+  };
+  // useEffect(() => {
+  //   logout();
+  // }, user);
   const Buttons = () => {
     if (user) {
       return (
@@ -18,20 +21,18 @@ function Links() {
         </ul>
       );
     }
-    else if (!user) {
-      return (
-        <ul className="nav navbar-nav ml-auto ">
-          <li className="nav-item">
-            <Link to="/signup" className="nav-link btn btn-outline-secondary">SignUp</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/login" className="nav-link btn btn-outline-secondary">Login</Link>
-          </li>
-        </ul>
-      );
+    return (
+      <ul className="nav navbar-nav ml-auto ">
+        <li className="nav-item">
+          <Link to="/signup" className="nav-link btn btn-outline-secondary">SignUp</Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/login" className="nav-link btn btn-outline-secondary">Login</Link>
+        </li>
+      </ul>
+    );
+  };
 
-    }
-  }
   return (
     <nav className="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
       <a className="navbar-brand" href="/home">LogoHome</a>
