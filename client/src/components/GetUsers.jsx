@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import urlBase from '../utils/utils';
 
 export default function GetUsers() {
   const [users, setUsers] = useState([]);
   useEffect(() => {
     function getUsers() {
-      fetch('http://localhost:3001/api/users/')
-        .then(response => response.json())
-        .then(users => {
-          console.log(users);
-          setUsers(users.data);
+      fetch(`${urlBase()}/api/users/`)
+        .then((response) => response.json())
+        .then((usersData) => {
+          setUsers(usersData.data);
         });
     }
     getUsers();

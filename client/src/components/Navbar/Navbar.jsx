@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Links from './Links';
-// import Login from '../../pages/login';
 
 const Container = styled.div.attrs({
   className: 'container'
@@ -15,7 +14,7 @@ margin-left: 0;`;
 function NavBar() {
   return (
     <Container>
-      <nav >
+      <nav>
         <Links />
       </nav>
     </Container>

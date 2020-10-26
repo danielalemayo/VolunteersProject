@@ -13,7 +13,7 @@ export default function App() {
       <p>We are an independent membership body that supports, represents and champions people in volunteer management in the Israel regardless of field, discipline or sector. </p>
       </div>
      
-    <div ref="" className = "carousel"> 
+    <div className ="carousel"> 
       <CarouselPhotos />
      </div>
      <div className= "allevents">
@@ -31,4 +31,3 @@ export default function App() {
    
   );
 }
-

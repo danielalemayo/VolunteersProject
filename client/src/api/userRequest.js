@@ -37,7 +37,7 @@ export const editUser = async data => {
 
 export const getUser = async data => {
   const response = await fetch(`${APIURL}/api/users/${data.id}`, {
-    method: "POST",
+    method: "GET",
     mode: "cors",
     cache: "no-cache",
     headers: {
