@@ -9,11 +9,12 @@ router.route('/')
   .post(eventCtrl.createEvent);
 
 router.route('/:id')
-  .put(eventCtrl.updateEvent)
   .get(eventCtrl.getEvent)
   .delete(eventCtrl.deleteEvent);
 
-router.route('/registerEvent/:id')
-  .get(eventCtrl.getRegisterEvent);
+router.route('/registerVolToEvent/:id')
+  .get(eventCtrl.getEventsByRegisterVolunteer)
+  .put(eventCtrl.registerVolToEvents)
+  .delete(eventCtrl.removeRegisterVolFromEvent);
 
 module.exports = router;

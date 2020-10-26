@@ -5,7 +5,7 @@ import urlBase from '../utils/utils';
 
 import './signupcs.css';
 
-function Login() {
+function Login() { 
   const history = useHistory();
   const { register, handleSubmit } = useForm();
   const [isLogin, setIsLogin] = useState(true);
