@@ -7,7 +7,7 @@ import NavBar from './components/Navbar/Navbar';
 import SignUp from './pages/signUp';
 import Login from './pages/login';
 import LandingPage from './pages/landingpage/LandingPage'
-
+import Footer from './components/Footer/Footer'
 import MyFeed from './pages/Myfeed/Myfeed';
 
 import EventForm from './pages/eventForm/eventForm';
@@ -28,6 +28,7 @@ function App() {
         <Route path="/eventForm" exact component={EventForm} />
         <Route path="*"><Redirect to="/" /></Route>
       </Switch>
+      <Footer/>
 
 
     </BrowserRouter>
