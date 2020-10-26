@@ -62,12 +62,12 @@ function MyFeed() {
           {user.name}
         </h2>
         <div className="Buttons">
-          <Button className="volunteerButton" as={Link} to="/createVolunteer">Giv a Hand</Button>
-          <Button className="volunteerButton" as={Link} to="/eventForm">Need volunteers ?</Button>
+          <Button className="volunteerButton" as={Link} to="/createVolunteer">Comming Soon</Button>
+          <Button className="volunteerButton" as={Link} to="/eventForm">Volunteers</Button>
         </div>
       </div>
       <div className="section2">
-        <EventsCalendar />
+        {/* <EventsCalendar /> */}
         <RegisterList user={user} />
         <EventsContainer user={user} />
       </div>

@@ -28,6 +28,7 @@
 } */
 
 .textArea {
+    padding-left: 15px;
     border-radius: 25px;
     border: none;
     border-radius: 10px;
@@ -38,6 +39,7 @@
 }
 
 .formCont {
+    width: 500px;
     border: 2px white solid;
     display: flex;
     border-radius: 10%;
@@ -71,8 +73,7 @@ h2 {
     font-weight: bold;
 }
 
-h6 {
-    margin: 0;
+.sTitle {
     font-size: larger;
 }
 

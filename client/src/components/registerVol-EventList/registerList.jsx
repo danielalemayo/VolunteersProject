@@ -53,7 +53,7 @@ const RegisterVolTOEventsList = (props) => {
   return (
     <ul className="Container">
       <h3>
-        Register  Events
+        Registered Events
       </h3>
       {renderEvents}
     </ul>

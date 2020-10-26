@@ -47,7 +47,7 @@ function EventsContainer(props) {
   const renderEvents = volunteeringEvents.map((event) => (
     <li key={event.name} className="event">
       <h5>
-        <span className="eventSpan">Name: </span>
+        <span className="eventSpan">Name:</span>
         {' '}
         {event.name}
       </h5>
@@ -78,7 +78,7 @@ function EventsContainer(props) {
   return (
     <ul className="Container">
       <h3>
-        All The Events
+        All Events
       </h3>
       {renderEvents}
     </ul>
