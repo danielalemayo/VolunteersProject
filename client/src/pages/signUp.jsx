@@ -64,10 +64,10 @@ function SignUp() {
 
           <div className="sub-cont">
             <div className="img">
-              <div className="img-text m-in">
+              {/* <div className="img-text m-in">
                 <h2>sign up</h2>
                 <p>text for sighup</p>
-              </div>
+              </div> */}
               <div className="img-btn">
                 <span className="m-up">Sign Up</span>
               </div>

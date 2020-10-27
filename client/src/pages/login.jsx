@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory, Redirect } from 'react-router-dom';
 import urlBase from '../utils/utils';
+import { useUser } from '../providers/userContext';
 
 import './signupcs.css';
 
 function Login() {
+  const { user, login } = useUser();
   const history = useHistory();
   const { register, handleSubmit } = useForm();
   const [isLogin, setIsLogin] = useState(true);
@@ -27,15 +29,19 @@ function Login() {
         );
       }
       if (newData) {
-        const user = newData.existingUser;
-        localStorage.setItem('user', JSON.stringify(user));
-        history.push('/myFeed');
+        const dataUser = newData.existingUser;
+        login(dataUser);
       }
     } catch (error) {
       console.error(error);
     }
     setIsLogin(false);
   };
+
+  if (user) {
+    return <Redirect to="/myFeed" />;
+  }
+
   return (
     <div className="Page">
       <form className="bodyLog" onSubmit={handleSubmit(onSubmit)} method="POST">
@@ -60,10 +66,10 @@ function Login() {
           </div>
           <div className="sub-cont">
             <div className="img-l">
-              <div className="img-l-text m-in">
+              {/* <div className="img-l-text m-in">
                 <h2>login</h2>
                 <p>text for login</p>
-              </div>
+              </div> */}
               <div className="img-btn">
                 <span className="m-in">Sign In</span>
               </div>

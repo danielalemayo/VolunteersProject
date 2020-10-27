@@ -1,32 +1,15 @@
+/* eslint-disable react/jsx-one-expression-per-line */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import EventsContainer from '../../components/EventsContainer/EventsContainer';
-import EventsCalendar from '../../components/eventsCalender/EventsCalendar';
-import ProfilePic from '../../img/sabine-ojeil-8KM_DyWGemw-unsplash.jpg';
+// import EventsCalendar from '../../components/eventsCalender/EventsCalendar';
+import ProfilePic from '../../img/img_avatar.png';
 import RegisterList from '../../components/registerVol-EventList/registerList';
 import './myFeed.css';
 
-const Button = styled.a`
-text-align: center;
-/* text-size-adjust: auto; */
-display: inline-block;
-border-radius: 10rem;
-height: 4rem;
-padding: 0.5rem 0;
-margin: 0.5rem 1rem;
-width: 10rem;
-background: transparent; 
-color: white;
-border: 2px solid white;
--webkit-text-decoration: none;
-text-decoration: none;
-  /* The GitHub button is a primary button
-   * edit this to target it specifically! */
-  ${(props) => props.primary && css`
-    background: white;
-    color: black;
-  `}
+const Button = styled.button`
 `;
 
 const ImgPic = styled.img`
@@ -53,23 +36,82 @@ function MyFeed() {
     getUser();
   }, []);
   return (
-    <div className="Page">
-      <div className="section1">
-        <ImgPic src={ProfilePic} />
-        <h2 className="MyFeedHeder">
-          Hello
-          {' '}
-          {user.name}
-        </h2>
-        <div className="Buttons">
-          <Button className="volunteerButton" as={Link} to="/createVolunteer">Giv a Hand</Button>
-          <Button className="volunteerButton" as={Link} to="/eventForm">Need volunteers ?</Button>
+    <div className="myFeed-body">
+      <div className="container emp-profile">
+        <div className="row">
+          <div className="col-md-4">
+            <div className="profile-img">
+              <ImgPic src={ProfilePic} />
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="profile-head">
+              <div className="row">
+                <div className="col-md-6">
+                  <h4>Name</h4>
+                </div>
+                <div className="col-md-6">
+                  <p>{user.name}</p>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-6">
+                  <h4>Email</h4>
+                </div>
+                <div className="col-md-6">
+                  <p>{user.email}</p>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-6">
+                  <h4>Phone</h4>
+                </div>
+                <div className="col-md-6">
+                  <p>{user.phone ? user.phone : 'None'}</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="section2">
-        <EventsCalendar />
-        <RegisterList user={user} />
-        <EventsContainer user={user} />
+        <div className="row">
+          <div className="col-md-4">
+            <div className="profile-work">
+              <Button type="button" className="volunteerButtons" as={Link} to="/createVolunteer">Comming Soon (Giv a Hand)</Button>
+              <Button type="button" className="volunteerButtons" as={Link} to="/eventForm">Volunteers</Button>
+            </div>
+          </div>
+          <div className="col-md-8">
+            <div className="linkRow">
+              <ul className="nav nav-tabs" id="myTab" role="tablist">
+                <li className="nav-item">
+                  <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Regitered Events</a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">All Events</a>
+                </li>
+                {/* <li className="nav-item">
+                  <a className="nav-link" id="profile-tab" data-toggle="tab" href="#myEvents" role="tab" aria-controls="profile" aria-selected="false">My Events</a>
+                </li> */}
+              </ul>
+            </div>
+            <div className="tab-content profile-tab" id="myTabContent">
+              <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div className="row">
+                  <div className="col-md-6">
+                    <RegisterList user={user} />
+                  </div>
+                </div>
+              </div>
+              <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div className="row">
+                  <div className="col-md-6">
+                    <EventsContainer user={user} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,16 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { useUser } from '../../providers/userContext';
 
 function Links() {
-  const [user, setUser] = useState({});
+  const { user, logout } = useUser();
 
-  const logout = () => {
-    localStorage.removeItem('user');
-    setUser(null);
-  };
-  // useEffect(() => {
-  //   logout();
-  // }, user);
   const Buttons = () => {
     if (user) {
       return (
@@ -46,6 +40,9 @@ function Links() {
           </li>
           <li className="nav-item">
             <Link to="/myFeed" className="nav-link">My Feed</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/contactUs" className="nav-link">Contact us</Link>
           </li>
         </ul>
         <Buttons />
