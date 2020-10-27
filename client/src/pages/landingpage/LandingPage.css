@@ -1,26 +1,33 @@
 .landingPage {
-    background-color: gray;
+ padding-left: 20px;
+ padding-right: 20px;;
 }
 
 .carousel {
-    width: 71%;
+    width: 78%;
     height: 50%;
-    left: 1%;
-}z
+    left: 9%;
+}
 .title {
     position: relative;
     display: flex;
     justify-content: center;
 }
 
+.allevents{
+    position: absolute;
+    left: 1%;
+    overflow: auto;
+}
+
 .LogoAndButton {
     position: relative;
     display: flex;
     justify-content: center;
+    top: 250px;
 }
 
 .getstarted {
-
     font-size: 18px;
     height: 65px;
     width: 250px;

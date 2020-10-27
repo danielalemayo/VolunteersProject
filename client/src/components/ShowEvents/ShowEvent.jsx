@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import urlBase from '../../utils/utils';
 
 
-function EventsContainer() {
+export default function EventsForLandingPage() {
     const [volunteeringEvents, setEvents] = useState([]);
     useEffect(() => {
         function getAllEvents() {
@@ -16,23 +16,19 @@ function EventsContainer() {
     }, []);
 
     const renderEvents = volunteeringEvents.map((event) => (
-
-
-        <li key={event.name} className="list-group-item" >
+        <li key={event.name} >
             <p>
-                <span className="eventSpan"></span>
-                {' '}
                 {event.description}
             </p>
         </li>
     ));
 
     return (
-        <ul className="list-group" >
+        <ul>
             {renderEvents}
         </ul>
     );
 }
 
 
-export default EventsContainer;
+
