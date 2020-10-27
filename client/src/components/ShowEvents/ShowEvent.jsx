@@ -16,17 +16,15 @@ export default function EventsForLandingPage() {
 
   const renderEvents = volunteeringEvents.map((event) => (
 
-    <li key={event.name} className="list-group-item" >
+    <li key={event.name}>
       <p>
-        <span className="eventSpan"></span>
-        {' '}
         {event.description}
       </p>
     </li>
   ));
 
   return (
-    <ul className="list-group">
+    <ul className="eventslist">
       {renderEvents}
     </ul>
   );
