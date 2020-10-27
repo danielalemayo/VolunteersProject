@@ -21,6 +21,7 @@
     background: none;
 } */
 .cont {
+    border-radius: 40px;
     overflow: hidden;
     position: relative;
     width: 990px;

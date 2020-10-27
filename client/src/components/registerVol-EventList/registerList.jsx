@@ -29,9 +29,9 @@ const RegisterVolTOEventsList = (props) => {
   const renderEvents = volunteerRegisterList.map((event) => (
     <li key={event.name} className="event">
       <h5>
-        <span className="eventSpan">Name: </span>
+        <span className="eventSpan">Category: </span>
         {' '}
-        {event.name}
+        {event.category}
       </h5>
       <p>
         <span className="eventSpan">City:</span>
@@ -52,9 +52,6 @@ const RegisterVolTOEventsList = (props) => {
 
   return (
     <ul className="Container">
-      <h3>
-        Register  Events
-      </h3>
       {renderEvents}
     </ul>
   );

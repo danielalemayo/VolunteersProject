@@ -11,7 +11,7 @@ function Footer() {
               <h5>Features</h5>
               <ul className="list-unstyled text-small">
               <li>Location - Lod,israel</li>
-              <li>email -Volunteer@gmail.com</li>
+              <li>email -Volunteer20@gmail.com</li>
               </ul>
             </div>
             <div className="col-6 col-md">
