@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
+import { useUser } from '../../providers/userContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './eventForm.css';
 import urlBase from '../../utils/utils';
@@ -12,12 +13,14 @@ function EventForm() {
   const categories = ['Select', 'Teaching', 'Help Homles', 'Driving lessons', 'Spacial needs', 'First aid', 'Other'];
   const [startDate, setStartDate] = useState(new Date());
   const formDate = new Date();
-  const storageUser = localStorage.getItem('user');
-  const user = JSON.parse(storageUser);
+  const { user } = useUser();
 
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = async (data) => {
+    // console.log(data);
+    // console.log(startDate);
+    // console.log(user);
     try {
       const respond = await fetch(`${urlBase()}/api/myFeed`, {
         method: 'POST',
@@ -25,7 +28,7 @@ function EventForm() {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          userId: user.id,
+          userId: user._id,
           city: data.city,
           category: data.category,
           eventDate: startDate,
@@ -92,7 +95,7 @@ function EventForm() {
             </div>
             <div className="item">
               <h6 className="sTitle">Description</h6>
-              <textarea type="text" placeholder="Total volunteer description/ nots " name="description" ref={register} />
+              <textarea className="TextPad" type="text" placeholder=" How can We help " name="description" ref={register} />
               {/* {errors.description && errors.description.type === 'required' && (
                 <span className="error"> more description needed </span>
               )} */}
