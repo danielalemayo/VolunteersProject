@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
+import { useUser } from '../providers/userContext';
 
 import urlBase from '../utils/utils';
 import './signupcs.css';
@@ -8,7 +9,7 @@ import './signupcs.css';
 function SignUp() {
   const { register, handleSubmit } = useForm();
   const history = useHistory();
-
+  const {user, login} = useUser();
   const onSubmit = async (data) => {
     try {
       const response = await fetch(`${urlBase()}/api/users/signUp`, {
@@ -24,7 +25,8 @@ function SignUp() {
       });
 
       const responseData = await response.json();
-
+      console.log(responseData.data);
+      login(responseData.data.user)
       if (!response.ok) {
         throw new Error(responseData.message);
       }

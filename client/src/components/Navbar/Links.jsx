@@ -29,7 +29,7 @@ function Links() {
 
   return (
     <nav className="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
-      <a className="navbar-brand" href="/home">LogoHome</a>
+      <a className="navbar-brand" href="/home"> LightBack</a>
       <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb" aria-expanded="true">
         <span className="navbar-toggler-icon"> </span>
       </button>

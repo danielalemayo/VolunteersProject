@@ -13,18 +13,25 @@ export const UserProvider = (props) => {
     localStorage.removeItem('user');
     setUser(null);
   }
-
+  function tryParseJson(str) {
+    try {
+      return JSON.parse(str)
+    } catch (e) {
+      return null;
+    }
+  }
   useEffect(() => {
     const userFromStorage = localStorage.getItem('user');
     if (userFromStorage) {
-      setUser(JSON.parse(userFromStorage));
+      const jSonUser = tryParseJson(userFromStorage);
+      setUser(jSonUser);
     }
   }, []);
 
   return (
-    <userContext.Provider value={{user, login, logout}} >
+    <userContext.Provider value={{ user, login, logout }} >
       {props.children}
     </ userContext.Provider>
   );
-} 
+}
 export const useUser = () => useContext(userContext)

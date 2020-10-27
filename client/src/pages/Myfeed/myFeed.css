@@ -1,5 +1,5 @@
 .myFeed-body {
-    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    background: -webkit-linear-gradient(left, #046863,#41aea9);
     display: flex;
     height: 100%;
 }
@@ -80,7 +80,7 @@
 
 .profile-head .nav-tabs .nav-link.active {
     border: none;
-    border-bottom: 2px solid #0062cc;
+    border-bottom: 2px solid #00864e;
 }
 
 .profile-work {
@@ -114,7 +114,7 @@
 
 .profile-tab p {
     font-weight: 600;
-    color: #0062cc;
+    color: #042e27;
 }
 
 
@@ -123,7 +123,7 @@
     /* -webkit-appearance: none; */
     /* -moz-appearance: none; */
     appearance: none;
-    background: #00c6ff;
+    background: #29bdb5;
     padding: 1em 1em;
     border: none;
     color: white;

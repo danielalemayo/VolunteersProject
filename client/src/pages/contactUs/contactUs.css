@@ -1,5 +1,5 @@
 .contactUsBody{
-    background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
+    background: -webkit-linear-gradient(left,#046863,#41aea9);
     display: flex;
 }
 .contact-form{
@@ -31,14 +31,14 @@
     margin-bottom: 8%;
     margin-top: -10%;
     text-align: center;
-    color: #0062cc;
+    color:  #035a4c;
 }
 .contact-form .btnContact {
     width: 50%;
     border: none;
     border-radius: 1rem;
     padding: 1.5%;
-    background: #dc3545;
+    background: #035a4c;
     font-weight: 600;
     color: #fff;
     cursor: pointer;
