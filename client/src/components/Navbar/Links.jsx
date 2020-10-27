@@ -1,17 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import useUser from '../../hooks/useUser';
 
 function Links() {
-  const [user, setUser] = useState({});
+  const { user, logout } = useUser();
 
-  const logout = () => {
-    localStorage.removeItem('user');
-    setUser(null);
-  };
-  // useEffect(() => {
-  //   logout();
-  // }, user);
   const Buttons = () => {
+    // console.log(user);
     if (user) {
       return (
         <ul className="nav navbar-nav ml-auto ">

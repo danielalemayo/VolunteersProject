@@ -30,7 +30,7 @@ function App() {
         <ProtectedRoute path="/eventForm" exact component={EventForm} />
         <Route path="*"><Redirect to="/" /></Route>
       </Switch>
-      <Footer/>
+      <Footer />
     </BrowserRouter>
   );
 }

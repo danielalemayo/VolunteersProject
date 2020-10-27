@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 function useUser() {
-  const [user, setUser] = useState(null);
-  
+  const [user, setUser] = useState();
   function login(userData) {
     localStorage.setItem('user', JSON.stringify(userData));
     setUser(userData);
@@ -16,7 +15,7 @@ function useUser() {
     if (userFromStorage) {
       setUser(JSON.parse(userFromStorage));
     }
-  }, [user, login, logout]);
+  }, []);
   return { user, login, logout };
 }
 

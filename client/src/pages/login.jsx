@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory, Redirect } from 'react-router-dom';
 import urlBase from '../utils/utils';
+import useUser from '../hooks/useUser';
 
 import './signupcs.css';
 
 function Login() {
+  const { user, login } = useUser();
   const history = useHistory();
   const { register, handleSubmit } = useForm();
   const [isLogin, setIsLogin] = useState(true);
@@ -27,8 +29,9 @@ function Login() {
         );
       }
       if (newData) {
-        const user = newData.existingUser;
-        localStorage.setItem('user', JSON.stringify(user));
+        const dataUser = newData.existingUser;
+        login(dataUser);
+        // return <Redirect to="/myFeed" />;
         history.push('/myFeed');
       }
     } catch (error) {
@@ -60,10 +63,10 @@ function Login() {
           </div>
           <div className="sub-cont">
             <div className="img-l">
-              <div className="img-l-text m-in">
+              {/* <div className="img-l-text m-in">
                 <h2>login</h2>
                 <p>text for login</p>
-              </div>
+              </div> */}
               <div className="img-btn">
                 <span className="m-in">Sign In</span>
               </div>

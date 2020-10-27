@@ -8,10 +8,10 @@ import urlBase from '../../utils/utils';
 import 'react-datepicker/dist/react-datepicker.css';
 
 function EventForm() {
-  const formDate = new Date();
   const history = useHistory();
-  const categories = ['Select', 'Teaching', 'Help Homles', 'Driving lesons', 'Autistics kids', 'Mada', 'other'];
+  const categories = ['Select', 'Teaching', 'Help Homles', 'Driving lessons', 'Spacial needs', 'First aid', 'Other'];
   const [startDate, setStartDate] = useState(new Date());
+  const formDate = new Date();
   const storageUser = localStorage.getItem('user');
   const user = JSON.parse(storageUser);
 
@@ -26,7 +26,6 @@ function EventForm() {
         },
         body: JSON.stringify({
           userId: user.id,
-          name: data.fullName,
           city: data.city,
           category: data.category,
           eventDate: startDate,
@@ -46,19 +45,9 @@ function EventForm() {
       <div className="bodyForm">
         <div className="formCont">
           <div className="form">
-            <h2 className="formHeader">Take a Hand</h2>
+            <h2 className="formHeader">Gate Assistance</h2>
             <div className="item">
-              <h6 htmlFor="name"> General name</h6>
-              <input className="textArea" type="text" placeholder="Name What you Need in generaly" name="fullName" ref={register({ required: true })} />
-              {errors.fullName && errors.fullName.type === 'required' && (<span className="error">{console.log(errors.fullName)} The Name is required </span>)}
-            </div>
-            <div className="item">
-              <h6>City</h6>
-              <input className="textArea" type="text" placeholder="Witch city you need" name="city" ref={register({ required: true })} />
-              {errors.city && errors.city.type === 'required' && (<span className="error"> Fill the city ! </span>)}
-            </div>
-            <div className="item">
-              <h6>Category</h6>
+              <h6 className="sTitle">Category</h6>
               <select className="textArea" name="category" ref={register({ required: true })}>
                 {categories.map((item) => (
                   <option
@@ -74,9 +63,15 @@ function EventForm() {
               {errors.category && errors.category.type === 'required' && (<span className="error" style={{ color: 'red' }}> Fill the Category ! </span>)}
             </div>
             <div className="item">
-              <h6 htmlFor="name"> Date</h6>
+              <h6 className="sTitle">Requested in City</h6>
+              <input className="textArea" type="text" name="city" ref={register({ required: true })} />
+              {errors.city && errors.city.type === 'required' && (<span className="error"> Fill the city ! </span>)}
+            </div>
+
+            <div className="item">
+              <h6 className="sTitle"> Requested Date</h6>
               <DatePicker
-                ref={register({ required: true })}
+                // ref={register({ required: true })}
                 name="dateTime"
                 className="my-form-control textArea"
                 selected={startDate}
@@ -91,12 +86,12 @@ function EventForm() {
                 <span
                   className="error"
                 >
-                  Fill the Date !
+                  Fill the Requested Date !
                 </span>
               )}
             </div>
             <div className="item">
-              <h6>Description</h6>
+              <h6 className="sTitle">Description</h6>
               <textarea type="text" placeholder="Total volunteer description/ nots " name="description" ref={register} />
               {/* {errors.description && errors.description.type === 'required' && (
                 <span className="error"> more description needed </span>
@@ -106,7 +101,7 @@ function EventForm() {
           </div>
         </div>
       </div>
-    </form >
+    </form>
   );
 }
 

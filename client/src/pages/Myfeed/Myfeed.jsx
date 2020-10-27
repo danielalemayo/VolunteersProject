@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import EventsContainer from '../../components/EventsContainer/EventsContainer';
-import EventsCalendar from '../../components/eventsCalender/EventsCalendar';
+// import EventsCalendar from '../../components/eventsCalender/EventsCalendar';
 import ProfilePic from '../../img/img_avatar.png';
 import RegisterList from '../../components/registerVol-EventList/registerList';
 import './myFeed.css';
@@ -118,12 +118,6 @@ function MyFeed() {
         </div>
       </div>
     </div>
-    // <div className="section2">
-    //   <EventsCalendar />
-    //   <RegisterList user={user} />
-    //   <EventsContainer user={user} />
-    // </div>
-    // </div >
   );
 }
 

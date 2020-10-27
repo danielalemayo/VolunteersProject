@@ -70,7 +70,7 @@ function EventsContainer(props) {
           setVolunteerToEvent(event._id, props.user._id);
         }}
       >
-        participate
+        Join
       </Button>
     </li>
   ));
