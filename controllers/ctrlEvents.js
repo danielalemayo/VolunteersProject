@@ -84,7 +84,7 @@ exports.deleteEvent = async (req, res) => {
 
 exports.getEventsByRegisterVolunteer = async (req, res) => {
   try {
-    const ListEvents = await EventsSchema.find({ registerVolunters: { $elemMatch: req.body } });
+    const ListEvents = await EventsSchema.find({ registerVolunters: { $elemMatch: { volunteerId: req.params.id } } });
     res.status(200).json({
       status: 'success',
       results: ListEvents.length,

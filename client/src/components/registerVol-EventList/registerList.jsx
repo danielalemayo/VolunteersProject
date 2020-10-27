@@ -52,7 +52,7 @@ const RegisterVolTOEventsList = (props) => {
 
   return (
     <ul className="Container">
-      {renderEvents}
+      {volunteerRegisterList ? renderEvents : <div style={{ fontSize: '50px' }}>None registered events.. Start Working Now</div>}
     </ul>
   );
 };

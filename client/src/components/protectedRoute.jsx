@@ -1,15 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
+import { useUser } from '../providers/userContext'
 
 const ProtectedRoute = ({ component: Component, ...rest }) => {
-  const [user, setUser] = useState({});
-
-  useEffect(() => {
-    const loacalUser = localStorage.getItem('user');
-    const jUser = JSON.parse(loacalUser);
-    setUser(jUser);
-  }, []);
-
+  const { user } = useUser();
   return (
     <Route
       {...rest}

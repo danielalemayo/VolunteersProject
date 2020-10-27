@@ -45,7 +45,7 @@ function EventForm() {
       <div className="bodyForm">
         <div className="formCont">
           <div className="form">
-            <h2 className="formHeader">Gate Assistance</h2>
+            <h2 className="formHeader">Get Assistance</h2>
             <div className="item">
               <h6 className="sTitle">Category</h6>
               <select className="textArea" name="category" ref={register({ required: true })}>

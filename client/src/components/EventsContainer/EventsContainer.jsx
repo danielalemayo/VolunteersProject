@@ -7,14 +7,16 @@ import styled from 'styled-components';
 import apis from '../../api/myFeedRequests';
 
 const Button = styled.button`
+  margin-bottom: 7px;
   display: inline;
-  background: #3aa1a1;
+  background: #41aea9;
   color: white;
   height: 2rem;
   width: 5.5rem;
   margin-right: 0;
   border-radius: 8%;
-  border-color: #3aa1a1;
+  border-color: #41aea9;
+  
 `;
 
 function EventsContainer(props) {
