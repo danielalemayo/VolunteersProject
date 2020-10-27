@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-// import logo from '../../'
 
 const Wrapper = styled.a.attrs({
   calssName: 'navbar-brand'

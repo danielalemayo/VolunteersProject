@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import EventsContainer from '../../components/EventsContainer/EventsContainer';
 import EventsCalendar from '../../components/eventsCalender/EventsCalendar';
-import ProfilePic from '../../img/sabine-ojeil-8KM_DyWGemw-unsplash.jpg';
+import ProfilePic from '../../img/img_avatar.png';
 import RegisterList from '../../components/registerVol-EventList/registerList';
 import './myFeed.css';
 
@@ -54,6 +54,7 @@ function MyFeed() {
                   <li class="nav-item">
                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
                   </li>
+                  
                 </ul>
               </div>
             </div>

@@ -32,7 +32,7 @@ function Links() {
       </ul>
     );
   };
-
+  
   return (
     <nav className="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
       <a className="navbar-brand" href="/home">LogoHome</a>
@@ -46,6 +46,9 @@ function Links() {
           </li>
           <li className="nav-item">
             <Link to="/myFeed" className="nav-link">My Feed</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/contactUs" className="nav-link">Contact us</Link>
           </li>
         </ul>
         <Buttons />
