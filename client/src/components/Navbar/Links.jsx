@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useUser from '../../hooks/useUser';
+import { useUser } from '../../providers/userContext';
 
 function Links() {
   const { user, logout } = useUser();
 
   const Buttons = () => {
-    // console.log(user);
     if (user) {
       return (
         <ul className="nav navbar-nav ml-auto ">

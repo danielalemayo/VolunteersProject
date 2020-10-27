@@ -76,10 +76,6 @@ function MyFeed() {
         <div className="row">
           <div className="col-md-4">
             <div className="profile-work">
-              {/* <p>WORK LINK</p>
-              <button type="button" className="button">
-                <span>Hover me I'm awesome</span>
-              </button> */}
               <Button type="button" className="volunteerButtons" as={Link} to="/createVolunteer">Comming Soon (Giv a Hand)</Button>
               <Button type="button" className="volunteerButtons" as={Link} to="/eventForm">Volunteers</Button>
             </div>

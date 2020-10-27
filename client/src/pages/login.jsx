@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory, Redirect } from 'react-router-dom';
 import urlBase from '../utils/utils';
-import useUser from '../hooks/useUser';
+import { useUser } from '../providers/userContext';
 
 import './signupcs.css';
 
@@ -31,14 +31,17 @@ function Login() {
       if (newData) {
         const dataUser = newData.existingUser;
         login(dataUser);
-        // return <Redirect to="/myFeed" />;
-        history.push('/myFeed');
       }
     } catch (error) {
       console.error(error);
     }
     setIsLogin(false);
   };
+
+  if (user) {
+    return <Redirect to="/myFeed" />;
+  }
+
   return (
     <div className="Page">
       <form className="bodyLog" onSubmit={handleSubmit(onSubmit)} method="POST">
