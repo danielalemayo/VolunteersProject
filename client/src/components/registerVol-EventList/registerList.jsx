@@ -52,8 +52,8 @@ const RegisterVolTOEventsList = (props) => {
 
   return (
     <ul className="Container">
-      {volunteerRegisterList ? renderEvents : <div style={{ fontSize: '50px' }}>None registered events.. Start Working Now</div>}
-    </ul>
+      {volunteerRegisterList.length > 0 ? renderEvents : <div style={{ fontSize: '2rem', textAlign: 'center',marginTop:'40px' }}>None registered events.. <span style={{ color: '#41aea9' }}>Start Halping Now</span> and <span style={{ color: '#41aea9' }}>Register to events</span> </div>}
+    </ul >
   );
 };
 
