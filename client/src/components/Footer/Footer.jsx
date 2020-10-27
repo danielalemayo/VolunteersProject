@@ -1,6 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import './Footer.css';
+
 function Footer() {
   return (
     <div className="footContainer">
@@ -26,7 +28,7 @@ function Footer() {
         </footer>
       </div>
     </div>
-    </div>
+   
 
   );
 }

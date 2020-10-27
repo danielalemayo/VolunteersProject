@@ -86,18 +86,20 @@ function MyFeed() {
                 </li> */}
               </ul>
             </div>
-            <div className="tab-content profile-tab" id="myTabContent">
-              <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                <div className="row">
-                  <div className="col-md-6">
-                    <RegisterList user={user} />
+            <div className="listContainer">
+              <div className="tab-content profile-tab" id="myTabContent">
+                <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                  <div className="row">
+                    <div className="col-md-6">
+                      <RegisterList user={user} />
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                <div className="row">
-                  <div className="col-md-6">
-                    <EventsContainer user={user} />
+                <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                  <div className="row">
+                    <div className="col-md-6">
+                      <EventsContainer user={user} />
+                    </div>
                   </div>
                 </div>
               </div>

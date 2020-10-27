@@ -1,8 +1,7 @@
 .Container {
-    border-left: burlywood solid 3px;
-    border-right: burlywood solid 3px;
-    width: 25rem;
-    min-width: 200px;
+    border-left: #046863 solid 3px;
+    border-right: #046863 solid 3px;
+    width: 30rem;
     min-height: 300px;
     display: flex;
     flex-direction: column;
@@ -29,7 +28,7 @@ ul {
 
 .event {
     border-bottom: 2px black solid;
-    width: 80%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     text-align: end;

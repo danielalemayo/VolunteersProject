@@ -16,7 +16,7 @@ export default function LandingPage() {
     <div className="landingPage">
       <div className="aboutus">  <h1 className="title"> LightBack</h1>
         <h2>Welcome to  LightBack </h2>
-        <p>We are an independent team that supports, represents and champions people in volunteer management in  Israel regardless of field, discipline or sector. </p>
+        <p className="description">We are an independent team that supports, represents and champions people in volunteer management in  Israel regardless of field, discipline or sector. </p>
       </div>
 
       <div className="carouselandallevents">

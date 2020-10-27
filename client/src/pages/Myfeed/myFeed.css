@@ -3,7 +3,10 @@
     display: flex;
     height: 100%;
 }
-
+.profile-head{
+    margin-top: 50px;
+    margin-left: 50px;
+}
 .emp-profile {
     padding: 3%;
     margin-top: 3%;
@@ -84,8 +87,7 @@
 }
 
 .profile-work {
-    /* padding: 14%;
-    margin-top: -15%; */
+    margin-top: 30px;
     display: flex;
     justify-content: center;
 }
@@ -155,7 +157,13 @@
 }
 
 .linkRow {
-    justify-content: end;
+    justify-content: space-evenly;
     display: flex;
     flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.listContainer{
+    display: flex;
+    justify-content: space-around;
 }

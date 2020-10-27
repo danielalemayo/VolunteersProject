@@ -48,12 +48,11 @@ function EventsContainer(props) {
 
   const renderEvents = volunteeringEvents.map((event) => (
     <li key={event.name} className="event">
-      <h5>
-        <span className="eventSpan">Category: </span>
+      <p>
+      <span className="eventSpan">Category: </span>
         {' '}
         {event.category}
-      </h5>
-      <p>
+        <br/>
         <span className="eventSpan">City:</span>
         {' '}
         {event.city}
