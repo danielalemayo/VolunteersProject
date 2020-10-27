@@ -47,6 +47,9 @@ function Links() {
           <li className="nav-item">
             <Link to="/myFeed" className="nav-link">My Feed</Link>
           </li>
+          <li className="nav-item">
+            <Link to="/contactUs" className="nav-link">Contact us</Link>
+          </li>
         </ul>
         <Buttons />
       </div>
