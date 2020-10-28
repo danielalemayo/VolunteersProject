@@ -49,10 +49,10 @@ function EventsContainer(props) {
   const renderEvents = volunteeringEvents.map((event) => (
     <li key={event.name} className="event">
       <p>
-      <span className="eventSpan">Category: </span>
+        <span className="eventSpan">Category: </span>
         {' '}
         {event.category}
-        <br/>
+        <br />
         <span className="eventSpan">City:</span>
         {' '}
         {event.city}
@@ -71,7 +71,7 @@ function EventsContainer(props) {
           setVolunteerToEvent(event._id, props.user._id);
         }}
       >
-        Join
+        Join {':)'}
       </Button>
     </li>
   ));

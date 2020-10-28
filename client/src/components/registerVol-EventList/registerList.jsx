@@ -2,12 +2,32 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
 import apis from '../../api/myFeedRequests';
+import styled from 'styled-components';
+
+const Button = styled.button`
+  margin-bottom: 7px;
+  display: inline;
+  background: #41aea9;
+  color: white;
+  height: 2rem;
+  width: 5.5rem;
+  margin-right: 0;
+  border-radius: 8%;
+  border-color: #41aea9;
+  
+`;
 
 const RegisterVolTOEventsList = (props) => {
   const [volunteerRegisterList, setVolunteerRegisterList] = useState([]);
 
   const getEventsByRegisterVolunteer = async () => {
     const res = await apis.getEventsByRegisterVolunteer(props.user._id);
+    setVolunteerRegisterList(res.data);
+  };
+
+  const removeVolFromEvent = async (eventId) => {
+    const res = await apis.unRegisterVolunteerToEvent(eventId, props.user._id);
+    console.log(res.data);
     setVolunteerRegisterList(res.data);
   };
 
@@ -27,13 +47,13 @@ const RegisterVolTOEventsList = (props) => {
   };
 
   const renderEvents = volunteerRegisterList.map((event) => (
-    <li key={event.name} className="event">
+    <li key={event._id} className="event">
 
       <p>
-      <span className="eventSpan">Category: </span>
+        <span className="eventSpan">Category: </span>
         {' '}
         {event.category}
-        <br/>
+        <br />
         <span className="eventSpan">City:</span>
         {' '}
         {event.city}
@@ -46,13 +66,13 @@ const RegisterVolTOEventsList = (props) => {
         {' '}
         {DateRender(event.eventDate)}
       </p>
-      {/* <Button type="button" onClick={() => setVolunteerToEvent(event._id, user.id)}>participate</Button> */}
+      <Button type="button" onClick={() => removeVolFromEvent(event._id)}>Cancel {':('}</Button>
     </li>
   ));
 
   return (
     <ul className="Container">
-      {volunteerRegisterList.length > 0 ? renderEvents : <div style={{ fontSize: '2rem', textAlign: 'center',marginTop:'40px' }}>None registered events.. <span style={{ color: '#41aea9' }}>Start Halping Now</span> and <span style={{ color: '#41aea9' }}>Register to events</span> </div>}
+      {volunteerRegisterList.length > 0 ? renderEvents : <div style={{ fontSize: '2rem', textAlign: 'center', marginTop: '40px' }}>None registered events.. <span style={{ color: '#41aea9' }}>Start Halping Now</span> and <span style={{ color: '#41aea9' }}>Register to events</span> </div>}
     </ul >
   );
 };
