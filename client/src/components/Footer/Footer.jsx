@@ -17,7 +17,7 @@ function Footer() {
               </ul>
             </div>
             <div className="col-6 col-md">
-              <h5>About Volunteer</h5>
+              <h5>About Us</h5>
               <ul className="list-unstyled text-small">
                 <li>The LightBack Association manages the connections between volunteers and volunteering events.</li>
                 <li>Our association is an independent community that aims to improve the matching between volunteers and volunteer events.</li>

@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../img/LightBackLogo2.png';
+import logo from '../../img/LightBackLogo.png';
 import CarouselPhotos from './CarouselPhotos';
 import ShowEvents from '../../components/ShowEvents/ShowEvent';
 import { useHistory } from 'react-router-dom';
