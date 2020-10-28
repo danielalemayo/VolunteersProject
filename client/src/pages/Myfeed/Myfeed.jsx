@@ -68,7 +68,7 @@ function MyFeed() {
         <div className="row">
           <div className="col-md-4">
             <div className="profile-work">
-              <Button type="button" className="volunteerButtons" as={Link} to="/createVolunteer">Comming Soon (Giv a Hand)</Button>
+              <Button type="button" className="volunteerButtons" as={Link} to="/createVolunteer"> Volunteer(Comming Soon</Button>
               <Button type="button" className="volunteerButtons" as={Link} to="/eventForm">Get Assistance</Button>
             </div>
           </div>
@@ -76,7 +76,7 @@ function MyFeed() {
             <div className="linkRow">
               <ul className="nav nav-tabs" id="myTab" role="tablist">
                 <li className="nav-item">
-                  <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Regitered Events</a>
+                  <a className="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Registered Events</a>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">All Events</a>
