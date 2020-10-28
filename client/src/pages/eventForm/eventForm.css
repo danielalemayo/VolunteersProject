@@ -134,3 +134,6 @@ textarea {
     font-weight: bold;
     background-color: red;
 }
+.TextPad{
+    padding-left: 5px;
+}

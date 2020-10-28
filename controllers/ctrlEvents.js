@@ -100,7 +100,7 @@ exports.getEventsByRegisterVolunteer = async (req, res) => {
 
 exports.removeRegisterVolFromEvent = async (req, res) => {
   try {
-    const updateEvent = await EventsSchema.updateOne({ _id: req.params.id }, { $pull: { registerVolunters: [req.body] } });
+    const updateEvent = await EventsSchema.updateOne({ _id: req.params.id }, { $pull: { registerVolunters: req.body } });
     res.status(200).json({
       status: 'success',
       data: {
